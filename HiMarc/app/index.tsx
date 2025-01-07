@@ -58,10 +58,10 @@ export default function Index() {
 
   // TrainCard Component
   const TrainCard = ({ trainData }) => (
-    <Card style={{ marginBottom: 10, width: '100%'}}>
+    <Card style={{ marginBottom: 10, width: '100%', backgroundColor: '#1C1C1C' }}>
       <Card.Content>
-        <Title>{trainData.trainName}</Title>
-        <Paragraph>{trainData.trainInfo}</Paragraph>
+        <Title style={{ color: 'white' }}>{trainData.trainName}</Title>
+        <Paragraph style={{ color: 'white' }}>{trainData.trainInfo}</Paragraph>
       </Card.Content>
     </Card>
   );
