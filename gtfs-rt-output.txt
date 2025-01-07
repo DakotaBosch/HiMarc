@@ -1,0 +1,125 @@
+Decoded GTFS-RT Trip Updates:
+{
+  "header": {
+    "gtfs_realtime_version": "2.0",
+    "incrementality": "FULL_DATASET",
+    "timestamp": "1736266471"
+  },
+  "entity": [
+    {
+      "id": "191726",
+      "trip_update": {
+        "trip": {
+          "trip_id": "Train427R",
+          "start_date": "20250107",
+          "route_id": "11705"
+        },
+        "stop_time_update": [
+          {
+            "departure": {
+              "delay": 134,
+              "time": "1736263634"
+            },
+            "stop_id": "11980"
+          },
+          {
+            "stop_sequence": 1,
+            "arrival": {
+              "delay": 239,
+              "time": "1736264129"
+            },
+            "departure": {
+              "delay": 209,
+              "time": "1736264129"
+            },
+            "stop_id": "11981"
+          },
+          {
+            "stop_sequence": 2,
+            "arrival": {
+              "delay": 259,
+              "time": "1736264499"
+            },
+            "departure": {
+              "delay": 219,
+              "time": "1736264499"
+            },
+            "stop_id": "11982"
+          },
+          {
+            "stop_sequence": 3,
+            "arrival": {
+              "delay": 219,
+              "time": "1736264809"
+            },
+            "departure": {
+              "delay": 109,
+              "time": "1736264809"
+            },
+            "stop_id": "11984"
+          },
+          {
+            "stop_sequence": 4,
+            "arrival": {
+              "delay": 189,
+              "time": "1736265269"
+            },
+            "departure": {
+              "delay": 149,
+              "time": "1736265269"
+            },
+            "stop_id": "11985"
+          },
+          {
+            "stop_sequence": 5,
+            "arrival": {
+              "delay": 229,
+              "time": "1736265649"
+            },
+            "departure": {
+              "delay": 169,
+              "time": "1736265649"
+            },
+            "stop_id": "11986"
+          },
+          {
+            "stop_sequence": 6,
+            "arrival": {
+              "delay": 249,
+              "time": "1736266039"
+            },
+            "departure": {
+              "delay": 199,
+              "time": "1736266039"
+            },
+            "stop_id": "11987"
+          },
+          {
+            "stop_sequence": 7,
+            "arrival": {
+              "delay": 209,
+              "time": "1736266229"
+            },
+            "departure": {
+              "delay": 149,
+              "time": "1736266229"
+            },
+            "stop_id": "11988"
+          },
+          {
+            "stop_sequence": 8,
+            "arrival": {
+              "delay": 246,
+              "time": "1736267346"
+            },
+            "stop_id": "11958"
+          }
+        ],
+        "vehicle": {
+          "id": "004910"
+        },
+        "timestamp": "1736266471"
+      }
+    }
+  ]
+}
