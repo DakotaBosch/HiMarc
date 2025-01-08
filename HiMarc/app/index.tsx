@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View, StyleSheet } from 'react-native';
 import { Card, Title, Paragraph, Provider as PaperProvider, DarkTheme } from 'react-native-paper';
 import fetchAndDecodeGTFSRT from '../utils/status';  // Import the function from 'status.js'
 
@@ -40,14 +40,14 @@ export default function Index() {
 
         // Format the data for the TrainCard component
         const formattedTrainData = largestStops.map(stop => ({
-          trainName: `Train ${stop.trip_id}`,
-          trainInfo: `Delay: ${stop.delay} seconds at stop ${stop.id}`
+          trainName: `${stop.trip_id}`,
+          trainInfo: `${Math.round(stop.delay/60)} min delay`
         }));
 
         // Update the state with formatted train data
         console.log(formattedTrainData);
-	setTrainData(formattedTrainData);
-	console.log(decodedData);
+    setTrainData(formattedTrainData);
+    console.log(decodedData);
       } catch (error) {
         console.error('Error fetching or processing data:', error);
       }
@@ -56,15 +56,27 @@ export default function Index() {
     fetchData();  // Call the fetch function when the component mounts
   }, []);  // Empty dependency array ensures it runs only once when the component mounts
 
-  // TrainCard Component
-  const TrainCard = ({ trainData }) => (
-    <Card style={{ marginBottom: 10, width: '100%', backgroundColor: '#1C1C1C' }}>
-      <Card.Content>
-        <Title style={{ color: 'white' }}>{trainData.trainName}</Title>
-        <Paragraph style={{ color: 'white' }}>{trainData.trainInfo}</Paragraph>
-      </Card.Content>
+// TrainCard Component
+const TrainCard = ({ trainData }) => (
+    <Card style={styles.card}>
+        <Card.Content>
+            <View style={styles.cardContainer}>
+                <Text style={styles.topLeftText}>{trainData.trainName}</Text>
+                <Text style={styles.topRightText}>{trainData.trainInfo}</Text>
+                <View style={styles.cardContent}>
+                    <Title style={styles.title}></Title>
+                    <View style={styles.lineContainer}>
+                        <View style={styles.line}></View>
+                        <View style={styles.dotLeft}></View>
+                        <View style={styles.dotRight}></View>
+                    </View>
+                </View>
+            </View>
+        </Card.Content>
     </Card>
-  );
+);
+
+
 
   // TrainList Component
   const TrainList = ({ trains }) => (
@@ -92,4 +104,79 @@ export default function Index() {
     </PaperProvider>
   );
 }
+
+const styles = StyleSheet.create({ card: { marginBottom: 10,
+    width: '100%',
+    backgroundColor: '#1C1C1C',
+  },
+  cardContainer: {
+    position: 'relative',
+    padding: 16,
+  },
+  cardContent: {
+    marginTop: 28, // +y buffer
+    marginBottom: 28, // -y buffer
+  },
+  title: {
+    color: 'white',
+  },
+  paragraph: {
+    color: 'white',
+  },
+  topLeftText: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  topRightText: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  bottomRightText: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  lineContainer: { 
+    flex: 1, 
+    justifyContent: 'center', // Center the line vertically 
+  },
+  line: {
+    height: 1, 
+    backgroundColor: 'white',
+    marginVertical: 8,
+  },
+  dot: {
+    width: 8,
+    height: 8,
+    backgroundColor: 'white',
+    borderRadius: 4,
+  },
+  dotLeft: {
+  position: 'absolute',      // Absolute positioning for the left dot
+    left: 0,                   // Position at the left end
+    width: 8,                  // Dot width
+    height: 8,                 // Dot height
+    backgroundColor: 'white',  // Dot color
+    borderRadius: 4,           // Make it a circle
+  },
+  dotRight: {
+    position: 'absolute',      // Absolute positioning for the right dot
+    right: 0,                  // Position at the right end
+    width: 8,                  // Dot width
+    height: 8,                 // Dot height
+    backgroundColor: 'white',  // Dot color
+    borderRadius: 4,           // Make it a circle
+  },
+});
 
