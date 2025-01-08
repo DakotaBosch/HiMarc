@@ -26,12 +26,11 @@ async function fetchAndDecodeGTFSRT() {
       longs: String,
       bytes: String,
     });
-
+    console.log(feedMessageObject)
     // Return the decoded data instead of saving it to a file
     return feedMessageObject;
 
   } catch (error) {
-    console.error('Error fetching or decoding GTFS-RT:', error);
     throw error;  // Propagate error to the caller
   }
 }

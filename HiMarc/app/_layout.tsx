@@ -20,22 +20,15 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index" // This points to the "index.js" screen
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <Icon name="home-outline" size={24} color={color} />,
+          title: 'Status',
+          tabBarIcon: ({ color }) => <Icon name="train-outline" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore" // This points to the "explore.js" screen
+        name="schedule" // Adding new train tab
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <Icon name="search-outline" size={24} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="index23" // Adding new train tab
-        options={{
-          title: 'Trains',
-          tabBarIcon: ({ color }) => <Icon name="train-outline" size={24} color={color} />, // Replace icon with train icon
+          title: 'Schedule',
+          tabBarIcon: ({ color }) => <Icon name="calendar-clear-outline" size={24} color={color} />, // Replace icon with train icon
         }}
       />
     </Tabs>

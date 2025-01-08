@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, View, StyleSheet } from 'react-native';
+import { ScrollView, Text, View, StyleSheet, Image,  StatusBar } from 'react-native';
 import { Card, Title, Paragraph, Provider as PaperProvider, DarkTheme } from 'react-native-paper';
 import fetchAndDecodeGTFSRT from '../utils/status';  // Import the function from 'status.js'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Index() {
   const [trainData, setTrainData] = useState([]);
@@ -56,26 +57,37 @@ export default function Index() {
     fetchData();  // Call the fetch function when the component mounts
   }, []);  // Empty dependency array ensures it runs only once when the component mounts
 
-// TrainCard Component
-const TrainCard = ({ trainData }) => (
-    <Card style={styles.card}>
-        <Card.Content>
-            <View style={styles.cardContainer}>
-                <Text style={styles.topLeftText}>{trainData.trainName}</Text>
-                <Text style={styles.topRightText}>{trainData.trainInfo}</Text>
-                <View style={styles.cardContent}>
-                    <Title style={styles.title}></Title>
-                    <View style={styles.lineContainer}>
-                        <View style={styles.line}></View>
-                        <View style={styles.dotLeft}></View>
-                        <View style={styles.dotRight}></View>
+const TrainCard = ({ trainData }) => {
+    const [trainPosition, setTrainPosition] = useState(Math.random() * 100); // Combine function call with initial state
+
+    const moveTrain = () => {
+    setTrainPosition(Math.random() * 100); // Inline random position generation
+};
+    return (
+        <Card style={styles.card}>
+            <Card.Content>
+                <View style={styles.cardContainer}>
+                    <Text style={styles.topLeftText}>{trainData.trainName}</Text>
+                    <Text style={styles.topRightText}>{trainData.trainInfo}</Text>
+                    <View style={styles.cardContent}>
+                        <Title style={styles.title}></Title>
+                        <View style={styles.lineContainer}>
+                            <View style={styles.line}></View>
+                            <Icon
+                                name="train"
+                                size={20}
+                                color="white"
+                                style={[styles.trainIcon, { left: `${trainPosition}%` }]}
+                            />
+                            <View style={styles.dotLeft}></View>
+                            <View style={styles.dotRight}></View>
+                        </View>
                     </View>
                 </View>
-            </View>
-        </Card.Content>
-    </Card>
-);
-
+            </Card.Content>
+        </Card>
+    );
+};
 
 
   // TrainList Component
@@ -97,8 +109,16 @@ const TrainCard = ({ trainData }) => (
           padding: 10,
           backgroundColor: 'black',
         }}
-      >
-        <Text style={{ color: 'white' }}>Train Timetable</Text>
+      > 
+	<StatusBar
+	  translucent
+	  backgroundColor="transparent"
+	  barStyle="light-content"
+	/>
+	<View style={styles.textBackground}>
+          <Text style={{ fontFamily: 'Roboto', color: 'white', fontSize: 18, textAlign: 'center'}}> Live Trains</Text>
+	</View>
+	<View style={styles.spacer} />
         <TrainList trains={trainData} />
       </View>
     </PaperProvider>
@@ -111,11 +131,11 @@ const styles = StyleSheet.create({ card: { marginBottom: 10,
   },
   cardContainer: {
     position: 'relative',
-    padding: 16,
+    padding: 10,
   },
   cardContent: {
-    marginTop: 28, // +y buffer
-    marginBottom: 28, // -y buffer
+    marginTop: 6, // +y buffer
+    marginBottom: 6, // -y buffer
   },
   title: {
     color: 'white',
@@ -125,17 +145,14 @@ const styles = StyleSheet.create({ card: { marginBottom: 10,
   },
   topLeftText: {
     position: 'absolute',
-    top: 10,
-    left: 10,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     color: 'white',
   },
   topRightText: {
     position: 'absolute',
-    top: 10,
-    right: 10,
-    fontSize: 16,
+    right: 0,
+    fontSize: 14,
     fontWeight: 'bold',
     color: 'white',
   },
@@ -143,7 +160,7 @@ const styles = StyleSheet.create({ card: { marginBottom: 10,
     position: 'absolute',
     bottom: 0,
     right: 0,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     color: 'white',
   },
@@ -156,12 +173,11 @@ const styles = StyleSheet.create({ card: { marginBottom: 10,
     backgroundColor: 'white',
     marginVertical: 8,
   },
-  dot: {
-    width: 8,
-    height: 8,
-    backgroundColor: 'white',
-    borderRadius: 4,
-  },
+  trainIcon: {
+    position: 'absolute',
+    top: -10,
+    transform: [{ translateX: -10 }],
+  }, 
   dotLeft: {
   position: 'absolute',      // Absolute positioning for the left dot
     left: 0,                   // Position at the left end
@@ -177,6 +193,18 @@ const styles = StyleSheet.create({ card: { marginBottom: 10,
     height: 8,                 // Dot height
     backgroundColor: 'white',  // Dot color
     borderRadius: 4,           // Make it a circle
+  },
+  textBackground: {
+    backgroundColor: '#09467c',
+    position: 'absolute',
+    padding: 50,
+    paddingBottom: 40,
+    top: 0,
+    left: 0,
+    right: 0,
+  },
+  spacer: {
+    height: 70,
   },
 });
 
