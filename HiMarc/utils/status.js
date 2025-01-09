@@ -26,7 +26,7 @@ async function fetchAndDecodeGTFSRT() {
       longs: String,
       bytes: String,
     });
-    console.log(feedMessageObject)
+    //console.log(feedMessageObject)
     // Return the decoded data instead of saving it to a file
     return feedMessageObject;
 
@@ -34,6 +34,14 @@ async function fetchAndDecodeGTFSRT() {
     throw error;  // Propagate error to the caller
   }
 }
+
+// Check if the script is executed directly (not imported)
+if (require.main === module) {
+  fetchAndDecodeGTFSRT()
+    .then(data => console.log(JSON.stringify(data, null,2)))
+    .catch(err => console.error(err));
+}
+
 
 module.exports = fetchAndDecodeGTFSRT;  // Export the function to be used in other files
 

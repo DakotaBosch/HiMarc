@@ -1,5 +1,5 @@
-//import RNFS from 'react-native-fs'; //removed because cant run in cli?
-const RNFS = require('react-native-fs');
+const fs = require('fs');
+
 /**
  * Function to read a .txt file from a local file path and convert its contents to JSON.
  * @param {string} filePath - Path to the .txt file.
@@ -7,7 +7,7 @@ const RNFS = require('react-native-fs');
  */
 const convertToJSON = async (filePath) => {
     try {
-        const data = await RNFS.readFile(filePath, 'utf8');
+        const data = await fs.promises.readFile(filePath, 'utf8');
 
         const lines = data.split('\n');
         const headers = lines[0].split(',');
@@ -28,13 +28,18 @@ const convertToJSON = async (filePath) => {
     }
 };
 
-// Example usage:
-const filePath = RNFS.DocumentDirectoryPath + '/trips.txt'; // Replace with your actual file path
-convertToJSON(filePath)
-    .then(jsonData => {
-        console.log('Converted JSON Data:', JSON.stringify(jsonData, null, 2));
-    })
-    .catch(err => {
-        console.error('Error:', err);
-    });
+// Export the function to be used in other files
+module.exports = convertToJSON;
+
+// Run the example usage only if this module is executed directly
+if (require.main === module) {
+    const filePath = './trips.txt'; // Replace with your actual file path
+    convertToJSON(filePath)
+        .then(jsonData => {
+            console.log('Converted JSON Data:', JSON.stringify(jsonData, null, 2));
+        })
+        .catch(err => {
+            console.error('Error:', err);
+        });
+}
 

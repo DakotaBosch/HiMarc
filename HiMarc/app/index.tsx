@@ -204,7 +204,7 @@ const styles = StyleSheet.create({ card: { marginBottom: 10,
     right: 0,
   },
   spacer: {
-    height: 70,
+    height: 105,
   },
 });
 
