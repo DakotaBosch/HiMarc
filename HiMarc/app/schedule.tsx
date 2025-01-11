@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { StyleSheet, ScrollView, Text, View } from 'react-native';
 import { Card, Title, Paragraph, Provider as PaperProvider, DarkTheme } from 'react-native-paper';
 
 export default function Index() {
@@ -272,7 +272,7 @@ export default function Index() {
     // Format the data for the TrainCard component
     if (largestStops) {
       const formattedTrainData = largestStops.map(stop => ({
-        trainName: `Train ${stop.trip_id}`,
+        trainName: `${stop.trip_id}`,
         trainInfo: `Delay: ${stop.delay} seconds at stop ${stop.id}`,
       }));
 
@@ -282,10 +282,13 @@ export default function Index() {
 
   // TrainCard Component
   const TrainCard = ({ trainData }) => (
-    <Card style={{ marginBottom: 10, width: '100%' }}>
+    <Card style={{ marginBottom: 10, width: '100%'}}>
       <Card.Content>
-        <Title>{trainData.trainName}</Title>
+        <Title style={{flex: 1, fontSize:12}}>{trainData.trainName}</Title>
         <Paragraph>{trainData.trainInfo}</Paragraph>
+	<View style={styles.textBackground}>
+    	  <Text style={styles.text}>CAMDEN</Text>
+	</View>
       </Card.Content>
     </Card>
   );
@@ -315,4 +318,23 @@ export default function Index() {
     </PaperProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  textBackground: {
+    position: 'absolute',
+    top: 4,
+    left: 16,
+    backgroundColor: '#ffffff',  // Background color for the text
+    padding: 0,
+    paddingLeft: 5,
+    paddingRight: 5,
+    borderRadius: 4,  // Optional: adds rounded corners
+  },
+  text: {
+    fontSize: 12,
+    color: '#0c0936',  // Text color
+    fontWeight: 'bold',
+  },
+});
+
 

@@ -38,7 +38,7 @@ async function fetchAndDecodeGTFSRT() {
 // Check if the script is executed directly (not imported)
 if (require.main === module) {
   fetchAndDecodeGTFSRT()
-    .then(data => console.log(JSON.stringify(data, null,2)))
+    .then(data => console.log(JSON.stringify(data.entity, null,2)))
     .catch(err => console.error(err));
 }
 

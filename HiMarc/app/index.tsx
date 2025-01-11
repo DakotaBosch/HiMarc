@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ScrollView, Text, View, StyleSheet, Image,  StatusBar } from 'react-native';
 import { Card, Title, Paragraph, Provider as PaperProvider, DarkTheme } from 'react-native-paper';
 import fetchAndDecodeGTFSRT from '../utils/status';  // Import the function from 'status.js'
+import livefetch from '../utils/merge';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Index() {
@@ -33,17 +34,20 @@ export default function Index() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const decodedData = await fetchAndDecodeGTFSRT();  // Fetch and decode data from the API
-        console.log(decodedData);  // Log the data for debugging
+//        const decodedData = await fetchAndDecodeGTFSRT();  // Fetch and decode data from the API
+//        console.log(decodedData);  // Log the data for debugging
+//
+//        // Handle the decoded data and get the largest stops
+//        const largestStops = decodedData.entity.map(entity => getLargestTimeStop(entity));
+//
+//        // Format the data for the TrainCard component
+//        const formattedTrainData = largestStops.map(stop => ({
+//          trainName: `${stop.trip_id}`,
+//          trainInfo: `${Math.round(stop.delay/60)} min delay`
+//        }));
 
-        // Handle the decoded data and get the largest stops
-        const largestStops = decodedData.entity.map(entity => getLargestTimeStop(entity));
 
-        // Format the data for the TrainCard component
-        const formattedTrainData = largestStops.map(stop => ({
-          trainName: `${stop.trip_id}`,
-          trainInfo: `${Math.round(stop.delay/60)} min delay`
-        }));
+    const info_live = await livefetch(); 
 
         // Update the state with formatted train data
         console.log(formattedTrainData);
@@ -71,6 +75,9 @@ const TrainCard = ({ trainData }) => {
                     <Text style={styles.topRightText}>{trainData.trainInfo}</Text>
                     <View style={styles.cardContent}>
                         <Title style={styles.title}></Title>
+			<View style={styles.labelcontainer}>
+			    <Text style={styles.label}>Camden</Text>
+			</View>
                         <View style={styles.lineContainer}>
                             <View style={styles.line}></View>
                             <Icon
@@ -125,7 +132,9 @@ const TrainCard = ({ trainData }) => {
   );
 }
 
-const styles = StyleSheet.create({ card: { marginBottom: 10,
+const styles = StyleSheet.create(
+  { 
+  card: { marginBottom: 10,
     width: '100%',
     backgroundColor: '#1C1C1C',
   },
@@ -144,7 +153,8 @@ const styles = StyleSheet.create({ card: { marginBottom: 10,
     color: 'white',
   },
   topLeftText: {
-    position: 'absolute',
+    flex: 1,
+    flexDirection: 'row',
     fontSize: 14,
     fontWeight: 'bold',
     color: 'white',
@@ -195,7 +205,7 @@ const styles = StyleSheet.create({ card: { marginBottom: 10,
     borderRadius: 4,           // Make it a circle
   },
   textBackground: {
-    backgroundColor: '#09467c',
+    backgroundColor: '#000435',
     position: 'absolute',
     padding: 50,
     paddingBottom: 40,
@@ -205,6 +215,18 @@ const styles = StyleSheet.create({ card: { marginBottom: 10,
   },
   spacer: {
     height: 105,
+  },
+  label: {
+    fontSize: 12,
+    color: '#ffffff',
+  },
+  labelcontainer: {
+    position: 'absolute',
+    flex: 1,
+    alignItems: 'center',
+    left: 4,
+    top: 4,
+    color: '#f5f5f5',
   },
 });
 
