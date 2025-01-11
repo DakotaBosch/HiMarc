@@ -1,28 +1,20 @@
 const convertToJSON = require('./csv_to_json.js');
 const fetchstatus = require('./status.js');
-import * as FileSystem from 'expo-file-system';
-import { Asset } from 'expo-asset';
+const FileSystem = require('expo-file-system');
 
 let train_info;
 
-train_info = await convertToJSON();
-//temp fix?
-//async function loadFile() {
-//  try {
-//    // Load the file from assets to the FileSystem
-//    const asset = Asset.fromModule(require('./assets/trips.txt'));
-//    await asset.downloadAsync();
-//    const filePath = asset.localUri;
-//
-//    const jsonData = await convertToJSON(filePath);
-//    train_info = jsonData;
-//    console.log('Converted JSON Data:', JSON.stringify(jsonData, null, 2));
-//    return filePath;
-//  } catch (err) {
-//    console.error('Error:', err);
-//  }
-//}
-//
+const filePath = '${FileSystem.documentDirectory}trips.txt';
+
+convertToJSON(filePath)
+  .then(jsonData => {
+    train_info = jsonData;
+    console.log('Converted JSON Data:', JSON.stringify(jsonData, null, 2));
+   }) 
+   .catch(err => {
+     console.error('Error:', err); 
+  });
+
 
 function getLargestTimeStop(entity) {
   let largestTimeStop = null;
@@ -51,6 +43,7 @@ async function fetchAndFormatData() {
     const decodedData = await fetchstatus();  // Fetch and decode data from the API
     const entityData = decodedData.entity;
     //console.log(JSON.stringify(entityData, null, 2));  // Log the data for debugging
+
     // Handle the decoded data and get the largest stops
     const largestStops = entityData.map(entity => getLargestTimeStop(entity));
 
@@ -70,6 +63,23 @@ async function fetchAndFormatData() {
   }
 }
 
+//function mergeArraysByPrimaryKey(arr1, arr2, key) {
+//  const map = new Map();
+//  
+//  arr1.forEach(item => map.set(item[key], { ...item }));
+//  
+//  arr2.forEach(item => {
+//    if (map.has(item[key])) {
+//      map.set(item[key], { ...map.get(item[key]), ...item });
+//    } else {
+//      map.set(item[key], { ...item });
+//    }
+//  });
+//  
+//  return Array.from(map.values());
+//}
+
+
 function mergeArraysByPrimaryKey(array1, array2, key) {
   return array1
     .map(item1 => {
@@ -79,22 +89,20 @@ function mergeArraysByPrimaryKey(array1, array2, key) {
     .filter(item => item !== null); 
 }
 
+
 // Function to call fetchAndFormatData, merge data, and print the merged data
 async function main() {
-  //await loadFile(); // Ensure the file is loaded and train_info is set
   const TrainDelay = await fetchAndFormatData();
   const entityArray = await train_info;
   //console.log('Formatted Train Statuses:', JSON.stringify(TrainDelay, null, 2));
   //console.log('Train Info:', JSON.stringify(entityArray, null, 2));
-  //console.log(entityArray);  
+  
   const mergedData = mergeArraysByPrimaryKey(entityArray, TrainDelay, 'trip_id');
   console.log('Merged Data:', JSON.stringify(mergedData, null, 2));
-  return mergedData;
 }
 
 if (require.main === module) {
   main();
 }
 
-module.exports = main;
-
+module.exports = mergeArraysByPrimaryKey;
