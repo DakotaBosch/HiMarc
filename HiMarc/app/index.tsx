@@ -6,7 +6,7 @@ import livefetch from '../utils/merge';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Index() {
-  const [trainData, setTrainData] = useState([]);
+  const [TrainData, setTrainData] = useState([]);
 
   // Function to get the entity with the largest time in stop_time_update for each entity
   function getLargestTimeStop(entity) {
@@ -47,12 +47,12 @@ export default function Index() {
 //        }));
 
 
-    const info_live = await livefetch(); 
+    const formattedTrainData = await livefetch();
 
         // Update the state with formatted train data
-        console.log(formattedTrainData);
+        //console.log(formattedTrainData);
     setTrainData(formattedTrainData);
-    console.log(decodedData);
+    //console.log(decodedData);
       } catch (error) {
         console.error('Error fetching or processing data:', error);
       }
@@ -61,23 +61,41 @@ export default function Index() {
     fetchData();  // Call the fetch function when the component mounts
   }, []);  // Empty dependency array ensures it runs only once when the component mounts
 
-const TrainCard = ({ trainData }) => {
+const TrainCard = ({ TrainData }) => {
     const [trainPosition, setTrainPosition] = useState(Math.random() * 100); // Combine function call with initial state
+    const [modifiedTrainData, setModifiedTrainData] = useState(TrainData);
 
     const moveTrain = () => {
-    setTrainPosition(Math.random() * 100); // Inline random position generation
-};
-    return (
+     setTrainPosition(Math.random() * 100); // Inline random position generation
+  };
+
+    useEffect(() => {
+      // Example modification
+      const updatedData = {
+        ...TrainData,
+        route_long_name: TrainData.route_long_name.split(' ')[0], // Retaining characters before the first blank space
+        trip_id: TrainData.trip_id.replace(/[^0-9]/g, '') // Extracting only numeric characters
+      };
+      console.log('test run')
+      setModifiedTrainData(updatedData);
+    }, [TrainData]);
+
+
+  return (
         <Card style={styles.card}>
             <Card.Content>
+
                 <View style={styles.cardContainer}>
-                    <Text style={styles.topLeftText}>{trainData.trainName}</Text>
-                    <Text style={styles.topRightText}>{trainData.trainInfo}</Text>
+                    <View style={styles.toprowcontainer}>
+                      <View style={styles.labelcontainer}>
+                        <Text style={styles.label}>{modifiedTrainData.route_long_name}</Text>
+                      </View>
+                      <Text style={styles.topLeftText}>{modifiedTrainData.trip_id}</Text>
+                      <Text style={styles.topRightText}>{TrainData.delay}</Text>
+                    </View>
+                    <Text style={styles.bottomLeftText}>{TrainData.trip_headsign}</Text>
                     <View style={styles.cardContent}>
                         <Title style={styles.title}></Title>
-			<View style={styles.labelcontainer}>
-			    <Text style={styles.label}>Camden</Text>
-			</View>
                         <View style={styles.lineContainer}>
                             <View style={styles.line}></View>
                             <Icon
@@ -101,7 +119,7 @@ const TrainCard = ({ trainData }) => {
   const TrainList = ({ trains }) => (
     <ScrollView style={{ padding: 10 }}>
       {trains.map((train, index) => (
-        <TrainCard key={index} trainData={train} />
+        <TrainCard key={index} TrainData={train} />
       ))}
     </ScrollView>
   );
@@ -126,7 +144,7 @@ const TrainCard = ({ trainData }) => {
           <Text style={{ fontFamily: 'Roboto', color: 'white', fontSize: 18, textAlign: 'center'}}> Live Trains</Text>
 	</View>
 	<View style={styles.spacer} />
-        <TrainList trains={trainData} />
+        <TrainList trains={TrainData} />
       </View>
     </PaperProvider>
   );
@@ -155,21 +173,22 @@ const styles = StyleSheet.create(
   topLeftText: {
     flex: 1,
     flexDirection: 'row',
+    left:0,
     fontSize: 14,
     fontWeight: 'bold',
     color: 'white',
+    paddingLeft: 2,
   },
   topRightText: {
-    position: 'absolute',
     right: 0,
     fontSize: 14,
     fontWeight: 'bold',
     color: 'white',
   },
-  bottomRightText: {
+  bottomLeftText: {
     position: 'absolute',
     bottom: 0,
-    right: 0,
+    left: 0,
     fontSize: 14,
     fontWeight: 'bold',
     color: 'white',
@@ -217,16 +236,18 @@ const styles = StyleSheet.create(
     height: 105,
   },
   label: {
-    fontSize: 12,
-    color: '#ffffff',
+    fontSize: 14,
+    color: '#000000',
+  },
+  toprowcontainer: {
+    color: '#f5f5f5',
+    flex: 1,
+    flexDirection: 'row',
   },
   labelcontainer: {
-    position: 'absolute',
-    flex: 1,
-    alignItems: 'center',
-    left: 4,
-    top: 4,
-    color: '#f5f5f5',
-  },
+    paddingRight: 4,
+    paddingLeft: 4,
+    backgroundColor: '#ffffff'
+  }
 });
 
