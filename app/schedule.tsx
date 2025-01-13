@@ -322,18 +322,20 @@ export default function Index() {
 const styles = StyleSheet.create({
   textBackground: {
     position: 'absolute',
-    top: 4,
-    left: 16,
-    backgroundColor: '#ffffff',  // Background color for the text
+    top: 0,
+    left: 0,
+    backgroundColor: '#FFA500',  // Background color for the text
     padding: 0,
     paddingLeft: 5,
     paddingRight: 5,
-    borderRadius: 4,  // Optional: adds rounded corners
+    borderRadius: 0,  // Optional: adds rounded corners
   },
   text: {
-    fontSize: 12,
+    fontSize: 14,
     color: '#0c0936',  // Text color
     fontWeight: 'bold',
+    paddingLeft: 2,
+    paddingRight: 2,
   },
 });
 

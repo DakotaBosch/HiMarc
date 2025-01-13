@@ -34,19 +34,6 @@ export default function Index() {
   useEffect(() => {
     async function fetchData() {
       try {
-//        const decodedData = await fetchAndDecodeGTFSRT();  // Fetch and decode data from the API
-//        console.log(decodedData);  // Log the data for debugging
-//
-//        // Handle the decoded data and get the largest stops
-//        const largestStops = decodedData.entity.map(entity => getLargestTimeStop(entity));
-//
-//        // Format the data for the TrainCard component
-//        const formattedTrainData = largestStops.map(stop => ({
-//          trainName: `${stop.trip_id}`,
-//          trainInfo: `${Math.round(stop.delay/60)} min delay`
-//        }));
-
-
     const formattedTrainData = await livefetch();
 
         // Update the state with formatted train data
@@ -125,14 +112,13 @@ const TrainCard = ({ TrainData }) => {
   );
 
   return (
-    <PaperProvider theme={DarkTheme}>
+    <PaperProvider>
       <View
         style={{
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
           padding: 10,
-          backgroundColor: 'black',
         }}
       > 
 	<StatusBar
@@ -154,7 +140,6 @@ const styles = StyleSheet.create(
   { 
   card: { marginBottom: 10,
     width: '100%',
-    backgroundColor: '#1C1C1C',
   },
   cardContainer: {
     position: 'relative',
@@ -165,10 +150,8 @@ const styles = StyleSheet.create(
     marginBottom: 6, // -y buffer
   },
   title: {
-    color: 'white',
   },
   paragraph: {
-    color: 'white',
   },
   topLeftText: {
     flex: 1,
@@ -176,14 +159,12 @@ const styles = StyleSheet.create(
     left:0,
     fontSize: 14,
     fontWeight: 'bold',
-    color: 'white',
     paddingLeft: 2,
   },
   topRightText: {
     right: 0,
     fontSize: 14,
     fontWeight: 'bold',
-    color: 'white',
   },
   bottomLeftText: {
     position: 'absolute',
@@ -191,7 +172,6 @@ const styles = StyleSheet.create(
     left: 0,
     fontSize: 14,
     fontWeight: 'bold',
-    color: 'white',
   },
   lineContainer: { 
     flex: 1, 
@@ -199,12 +179,13 @@ const styles = StyleSheet.create(
   },
   line: {
     height: 1, 
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     marginVertical: 8,
   },
   trainIcon: {
     position: 'absolute',
     top: -10,
+	backgroundColor: 'black',
     transform: [{ translateX: -10 }],
   }, 
   dotLeft: {
@@ -212,7 +193,7 @@ const styles = StyleSheet.create(
     left: 0,                   // Position at the left end
     width: 8,                  // Dot width
     height: 8,                 // Dot height
-    backgroundColor: 'white',  // Dot color
+    backgroundColor: 'black',  // Dot color
     borderRadius: 4,           // Make it a circle
   },
   dotRight: {
@@ -220,7 +201,7 @@ const styles = StyleSheet.create(
     right: 0,                  // Position at the right end
     width: 8,                  // Dot width
     height: 8,                 // Dot height
-    backgroundColor: 'white',  // Dot color
+    backgroundColor: 'black',  // Dot color
     borderRadius: 4,           // Make it a circle
   },
   textBackground: {
@@ -237,6 +218,7 @@ const styles = StyleSheet.create(
   },
   label: {
     fontSize: 14,
+    fontWeight: 'bold',
     color: '#000000',
   },
   toprowcontainer: {

@@ -194,19 +194,6 @@ data2 = `route_id,agency_id,route_short_name,route_long_name,route_desc,route_ty
 
 const convertToJSON = async (filePath) => {
     try {
-	//console.log(filePath);
-	//const fileInfo = await FileSystem.getInfoAsync(filePath);
-	//console.log(fileInfo)
-	//	if (!fileInfo.exists) {
-	//	    const content = "id,name,age\n1,John,30\n2,Jane,25";  // Example content
-	//	    await FileSystem.writeAsStringAsync(filePath, content);
-	//	    console.log(`File created at ${filePath}`);
-	//} else {
-	//   	    console.log(`File already exists at ${filePath}`);
-	//}
-	//	
-	//
-	//        const data = await FileSystem.readAsStringAsync(filePath);
         let data;
         if (filePath === 1) {
             data = data1;
