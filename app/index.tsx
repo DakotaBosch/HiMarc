@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, View, StyleSheet, Image,  StatusBar } from 'react-native';
+import { ScrollView, Text, View, StyleSheet, Image } from 'react-native';
 import { Card, Title, Paragraph, Provider as PaperProvider, DarkTheme } from 'react-native-paper';
-import fetchAndDecodeGTFSRT from '../utils/status';  // Import the function from 'status.js'
 import livefetch from '../utils/merge';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -95,7 +94,7 @@ const TrainCard = ({ TrainData }) => {
                     </View>
 		    <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '99%'}}>
 		        <Text style={{fontWeight: 'bold'}}>{TrainData.start_time}</Text>
-		        <Text style= {{fontWeight: 'bold'}}>{TrainData.end_time}</Text>
+		        <Text style= {{fontWeight: 'bold'}}>{TrainData.end_time_short}</Text>
 		    </View>
                 </View>
             </Card.Content>
@@ -123,15 +122,6 @@ const TrainCard = ({ TrainData }) => {
           padding: 10,
         }}
       > 
-	<StatusBar
-	  translucent
-	  backgroundColor="transparent"
-	  barStyle="light-content"
-	/>
-	<View style={styles.textBackground}>
-          <Text style={{ fontFamily: 'Roboto', color: 'white', fontSize: 18, textAlign: 'center'}}> Live Trains</Text>
-	</View>
-	<View style={styles.spacer} />
         <TrainList trains={TrainData} />
       </View>
     </PaperProvider>
@@ -145,11 +135,10 @@ const styles = StyleSheet.create(
   },
   cardContainer: {
     position: 'relative',
-    padding: 10,
   },
   cardContent: {
-    marginTop: 6, // +y buffer
-    marginBottom: 6, // -y buffer
+    marginTop: 0, // +y buffer
+    marginBottom: 0, // -y buffer
   },
   title: {
   },
@@ -211,16 +200,7 @@ const styles = StyleSheet.create(
     backgroundColor: 'black',  // Dot color
     borderRadius: 4,           // Make it a circle
   },
-  textBackground: {
-    backgroundColor: '#000435',
-    position: 'absolute',
-    padding: 50,
-    paddingBottom: 40,
-    top: 0,
-    left: 0,
-    right: 0,
-  },
-  spacer: {
+    spacer: {
     height: 105,
   },
   label: {

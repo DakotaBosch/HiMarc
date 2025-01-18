@@ -10,14 +10,14 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "hermes": true  // Enable Hermes for iOS
+      "hermes": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "hermes": true  // Enable Hermes for Android
+      "hermes": true
     },
     "web": {
       "bundler": "metro",
@@ -34,6 +34,12 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+      "expo-asset",
+	{
+	"assets": ["./assets/images/Marc_w.png"]
+	}
       ]
     ],
     "experiments": {
@@ -41,4 +47,3 @@
     }
   }
 }
-

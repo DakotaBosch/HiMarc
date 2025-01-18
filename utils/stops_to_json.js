@@ -32,7 +32,7 @@ const parseCSV = () => {
       timepoint: parseInt(obj.timepoint, 10)
     });
   }
-
+  
   // Add start_time and end_time to each trip
   Object.values(trips).forEach(trip => {
     // find smallest stop_seq val
@@ -41,17 +41,38 @@ const parseCSV = () => {
     // Find start_time where stop_sequence is 1
     const startStop = trip.stops.find(stop => stop.stop_sequence === minStopSequence);
     if (startStop) {
-      trip.start_time = startStop.arrival_time;
+      console.log(startStop.arrival_time);
+      trip.start_time = formatTime(startStop.arrival_time);
+      console.log(trip.start_time);
     }
 
     // Find end_time from the last stop in the array
     if (trip.stops.length > 0) {
-      trip.end_time = trip.stops[trip.stops.length - 1].arrival_time;
+      console.log('stop:');
+      console.log(trip.stops[trip.stops.length-1].arrival_time);
+      trip.end_time = (trip.stops[trip.stops.length - 1].arrival_time);
+      trip.end_time_short = formatTime(trip.stops[trip.stops.length - 1].arrival_time);
+      console.log(trip.end_time);
     }
-  });
 
+  });
+  console.log('finished:~``````````````~~~~~~~~~~~')
   return Object.values(trips);
+  
+
+  // Function to format time from HH:MM:SS to H:MM
+  function formatTime(timeString) {
+    
+    // Ensure the timeString is in HH:MM:SS format
+    if (typeof timeString !== 'string' || timeString.split(':').length !== 3) {
+      console.error("Invalid time format:", timeString); // Log invalid format for debugging
+      return null; // Return null for invalid time format
+    }
+    const [hours, minutes] = timeString.split(':'); // Split time string into hours and minutes
+    return `${parseInt(hours)}:${minutes}`; // Remove leading zeros from hours and keep minutes
+  }
 };
+
 
 module.exports = parseCSV; 
 

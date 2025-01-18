@@ -118,7 +118,7 @@ async function main() {
   //console.log('Merged Data:s', JSON.stringify(mergedData, null, 2));
   //console.log(Trainstops);
   const mergedData = mergeArraysByPrimaryKey(transData, Trainstops, 'trip_id');
-  console.log(JSON.stringify(mergedData, null, 2));
+  //console.log(JSON.stringify(mergedData, null, 2));
 
   const sortedData = filterPastEvents(mergedData);
 
@@ -129,20 +129,20 @@ async function main() {
 function filterPastEvents(events) {
   //const currentTime = new Date().getTime(); // Get the current time in milliseconds
   const currentTime = new Date().getTime() - new Date().setHours(0, 0, 0, 0);
-  const twelveHoursInMilliseconds = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
+  const tenHoursInMilliseconds = 10 * 60 * 60 * 1000; // 10 hours in milliseconds
 
   return events.filter(event => {
-    console.log(event.end_time);
+    //console.log(event.end_time);
     // Parse the end_time as a date and get the time in milliseconds
     const endTime = convertTimeToMilliseconds(event.end_time);
 
     // Get the delay in milliseconds (if present), else set it to 0
     const delay = event.delay ? event.delay * 1000 : 0;
     
-    console.log(currentTime, endTime, delay);
+    //console.log(currentTime, endTime, delay);
 
-    // Check if the end_time + delay is earlier than the current time
-    return (endTime + delay <= currentTime) && (endTime >= currentTime - twelveHoursInMilliseconds);
+    // conditions to return train
+    return (endTime + delay >= currentTime) && (endTime <= currentTime + tenHoursInMilliseconds);
   });
 }
 
