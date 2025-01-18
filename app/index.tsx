@@ -63,7 +63,6 @@ const TrainCard = ({ TrainData }) => {
         route_long_name: TrainData.route_long_name.split(' ')[0], // Retaining characters before the first blank space
         trip_id: TrainData.trip_id.replace(/[^0-9]/g, '') // Extracting only numeric characters
       };
-      console.log('test run')
       setModifiedTrainData(updatedData);
     }, [TrainData]);
 
@@ -78,9 +77,9 @@ const TrainCard = ({ TrainData }) => {
                         <Text style={styles.label}>{modifiedTrainData.route_long_name}</Text>
                       </View>
                       <Text style={styles.topLeftText}>{modifiedTrainData.trip_id}</Text>
+                      <Text style={styles.bottomLeftText}> --->  {TrainData.trip_headsign}</Text>
                       <Text style={styles.topRightText}>{TrainData.delay}</Text>
                     </View>
-                    <Text style={styles.bottomLeftText}>{TrainData.trip_headsign}</Text>
                     <View style={styles.cardContent}>
                         <Title style={styles.title}></Title>
                         <View style={styles.lineContainer}>
@@ -88,13 +87,16 @@ const TrainCard = ({ TrainData }) => {
                             <Icon
                                 name="train"
                                 size={20}
-                                color="white"
                                 style={[styles.trainIcon, { left: `${trainPosition}%` }]}
                             />
                             <View style={styles.dotLeft}></View>
                             <View style={styles.dotRight}></View>
                         </View>
                     </View>
+		    <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '99%'}}>
+		        <Text style={{fontWeight: 'bold'}}>{TrainData.start_time}</Text>
+		        <Text style= {{fontWeight: 'bold'}}>{TrainData.end_time}</Text>
+		    </View>
                 </View>
             </Card.Content>
         </Card>
@@ -167,30 +169,34 @@ const styles = StyleSheet.create(
     fontWeight: 'bold',
   },
   bottomLeftText: {
-    position: 'absolute',
-    bottom: 0,
+    flex: 1,
+    flexDirection: 'row',
     left: 0,
     fontSize: 14,
     fontWeight: 'bold',
   },
   lineContainer: { 
-    flex: 1, 
+    //flex: 1, 
+    //flexDirection: 'row',
     justifyContent: 'center', // Center the line vertically 
+    
   },
   line: {
+    flex: 1,
+    justifyContent: 'center',
     height: 1, 
     backgroundColor: 'black',
-    marginVertical: 8,
+    marginVertical: 4,
   },
   trainIcon: {
     position: 'absolute',
-    top: -10,
-	backgroundColor: 'black',
+    top: -14,
     transform: [{ translateX: -10 }],
   }, 
   dotLeft: {
-  position: 'absolute',      // Absolute positioning for the left dot
+    position: 'absolute',      // Absolute positioning for the left dot
     left: 0,                   // Position at the left end
+    top: 0,
     width: 8,                  // Dot width
     height: 8,                 // Dot height
     backgroundColor: 'black',  // Dot color
@@ -199,6 +205,7 @@ const styles = StyleSheet.create(
   dotRight: {
     position: 'absolute',      // Absolute positioning for the right dot
     right: 0,                  // Position at the right end
+    top: 0,
     width: 8,                  // Dot width
     height: 8,                 // Dot height
     backgroundColor: 'black',  // Dot color

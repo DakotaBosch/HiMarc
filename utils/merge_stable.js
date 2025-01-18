@@ -119,50 +119,8 @@ async function main() {
   //console.log(Trainstops);
   const mergedData = mergeArraysByPrimaryKey(transData, Trainstops, 'trip_id');
   console.log(JSON.stringify(mergedData, null, 2));
-
-  const sortedData = filterPastEvents(mergedData);
-
-  return sortedData;
+  return mergedData;
 }
-
-
-function filterPastEvents(events) {
-  //const currentTime = new Date().getTime(); // Get the current time in milliseconds
-  const currentTime = new Date().getTime() - new Date().setHours(0, 0, 0, 0);
-  const twelveHoursInMilliseconds = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
-
-  return events.filter(event => {
-    console.log(event.end_time);
-    // Parse the end_time as a date and get the time in milliseconds
-    const endTime = convertTimeToMilliseconds(event.end_time);
-
-    // Get the delay in milliseconds (if present), else set it to 0
-    const delay = event.delay ? event.delay * 1000 : 0;
-    
-    console.log(currentTime, endTime, delay);
-
-    // Check if the end_time + delay is earlier than the current time
-    return (endTime + delay <= currentTime) && (endTime >= currentTime - twelveHoursInMilliseconds);
-  });
-}
-
-function convertTimeToMilliseconds(timeString) {
-  // Split the time string into hours, minutes, and seconds
-  const [hours, minutes, seconds] = timeString.split(':').map(Number);
-
-  // Convert hours, minutes, and seconds to milliseconds
-  const hoursInMilliseconds = hours * 60 * 60 * 1000;
-  const minutesInMilliseconds = minutes * 60 * 1000;
-  const secondsInMilliseconds = seconds * 1000;
-
-  // Calculate the total milliseconds
-  const totalMilliseconds = hoursInMilliseconds + minutesInMilliseconds + secondsInMilliseconds;
-
-  return totalMilliseconds;
-}
-
-
-
 
 if (require.main === module) {
   main();

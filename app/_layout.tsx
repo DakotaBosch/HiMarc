@@ -11,21 +11,22 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: colorScheme === 'dark' ? '#ffffff' : '#000000', // Set active tab color
+	tabBarInactiveTintColor: colorScheme === 'dark' ? '#d3d3d3' : '#d3d3d3', // Set inactive tab color
         tabBarStyle: {
-          backgroundColor: '#212121', // Dark gray background color for the tab bar
+          backgroundColor: '#000000', // Dark gray background color for the tab bar
         },
-        headerShown: false, // Optional: Hide header if you don’t need it
+        headerShown: true, // Optional: Hide header if you don’t need it
       }}
     >
       <Tabs.Screen
-        name="index" // This points to the "index.js" screen
+        name="index"
         options={{
           title: 'Status',
           tabBarIcon: ({ color }) => <Icon name="train-outline" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="schedule" // Adding new train tab
+        name="schedule"
         options={{
           title: 'Schedule',
           tabBarIcon: ({ color }) => <Icon name="calendar-clear-outline" size={24} color={color} />, // Replace icon with train icon
