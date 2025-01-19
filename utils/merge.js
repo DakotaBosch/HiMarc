@@ -135,23 +135,34 @@ async function main() {
   const sortedData = filterPastEvents(mergedData2);
   //console.log(JSON.stringify(sortedData, null, 2));
 
+
   sortedData.forEach(trip => {
     const startTimeMS = convertTimeToMilliseconds(trip.start_time);
     const endTimeMS = convertTimeToMilliseconds(trip.end_time);
     const delayMS = isNaN(trip.delay) ? 0 : trip.delay * 60 * 1000; // Convert delay to milliseconds, handling NaN as 0
-    const currentTimeMS = new Date().getTime() % (24 * 3600 * 1000); // Current milliseconds in the day
+    const currentTimeMS = new Date().getTime() - new Date().setHours(0, 0, 0, 0);
 
     const totalTimeMS = endTimeMS - startTimeMS + delayMS;
     let elapsedTimeMS = Math.max(currentTimeMS - startTimeMS, 0); // Ensure non-negative
     
-    if (endTimeMS >= currentTimeMS) {
+    if (startTimeMS >= currentTimeMS) {
       elapsedTimeMS = 0;
     }
 
-    console.log(totalTimeMS, elapsedTimeMS) 
     trip.completionPercentage = (elapsedTimeMS / totalTimeMS) * 100;
-  });
   
+    if (trip.completionPercentage < 2) {
+      trip.completionPercentage = 2;
+    } else if (train.completionPercentage > 96) {
+      train.completionPerecentage = 96;
+    }
+
+    });
+
+  sortedData.sort((a, b) => b.completionPercentage - a.completionPercentage);
+ 
+  
+ 
   console.log(JSON.stringify(sortedData, null, 2));
 
   return sortedData;

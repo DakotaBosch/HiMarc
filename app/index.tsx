@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ScrollView, Text, View, StyleSheet, Image } from 'react-native';
 import { Card, Title, Paragraph, Provider as PaperProvider, DarkTheme } from 'react-native-paper';
 import livefetch from '../utils/merge';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon  from 'react-native-ico-mingcute-tiny-bold-filled';
 
 export default function Index() {
   const [TrainData, setTrainData] = useState([]);
@@ -80,9 +80,21 @@ const TrainCard = ({ TrainData }) => {
     const [modifiedTrainData, setModifiedTrainData] = useState(TrainData);
 
     const moveTrain = () => {
-     setTrainPosition(TrainData.completionPercentage || 0); // Inline random position generation
+      if (TrainData.completionPercentage < 2) {
+        setTrainPosition(2);
+      } else if (TrainData.completionPercentage > 96) {
+	setTrainPosition(96);
+      }
+        else{
+       setTrainPosition(TrainData.completionPercentage || 0); 
+      }
   };
 
+    useEffect(() => {
+	moveTrain();
+    }, [TrainData.completionPercentage]);
+
+    // this really should get moved to a different file...
     useEffect(() => {
       // Example modification
       const updatedData = {
@@ -113,7 +125,7 @@ const TrainCard = ({ TrainData }) => {
                             <View style={styles.line}></View>
                             <Icon
                                 name="train"
-                                size={20}
+                                size={100}
                                 style={[styles.trainIcon, { left: `${trainPosition}%` }]}
                             />
                             <View style={styles.dotLeft}></View>
