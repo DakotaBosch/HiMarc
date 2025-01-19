@@ -30,6 +30,34 @@ export default function Index() {
     return largestTimeStop;
   }
 
+  // dynamic styling for each line
+  const dynamicStyles = (routeLongName) => {
+    let backgroundColor;
+    switch (routeLongName) {
+    case 'CAMDEN':
+        backgroundColor = 'orange';
+        break;
+      case 'PENN':
+        backgroundColor = '#004F98';
+        break;
+      case 'BRUNSWICK':
+        backgroundColor = 'gray';
+        break;
+      default:
+        backgroundColor = 'white'; // Fallback color
+    }
+  
+    return {
+      flexDirection: 'row',
+      paddingRight: 4,
+      paddingLeft: 4,
+      backgroundColor: backgroundColor,
+      alignItems: 'center',
+      justifyContent: 'flex-start'
+    };
+  };
+
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -72,11 +100,11 @@ const TrainCard = ({ TrainData }) => {
 
                 <View style={styles.cardContainer}>
                     <View style={styles.toprowcontainer}>
-                      <View style={styles.labelcontainer}>
+                      <View style={dynamicStyles(modifiedTrainData.route_long_name)}>
                         <Text style={styles.label}>{modifiedTrainData.route_long_name}</Text>
+                        <Text style={styles.topLeftText}>{modifiedTrainData.trip_id}</Text>
                       </View>
-                      <Text style={styles.topLeftText}>{modifiedTrainData.trip_id}</Text>
-                      <Text style={styles.bottomLeftText}> --->  {TrainData.trip_headsign}</Text>
+                      <Text style={styles.DirectionText}> --->  {TrainData.trip_headsign}</Text>
                       <Text style={styles.topRightText}>{TrainData.delay}</Text>
                     </View>
                     <View style={styles.cardContent}>
@@ -93,7 +121,7 @@ const TrainCard = ({ TrainData }) => {
                         </View>
                     </View>
 		    <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '99%'}}>
-		        <Text style={{fontWeight: 'bold'}}>{TrainData.start_time}</Text>
+		        <Text style={{fontWeight: 'bold'}}>{TrainData.start_time_short}</Text>
 		        <Text style= {{fontWeight: 'bold'}}>{TrainData.end_time_short}</Text>
 		    </View>
                 </View>
@@ -134,7 +162,6 @@ const styles = StyleSheet.create(
     width: '100%',
   },
   cardContainer: {
-    position: 'relative',
   },
   cardContent: {
     marginTop: 0, // +y buffer
@@ -145,30 +172,30 @@ const styles = StyleSheet.create(
   paragraph: {
   },
   topLeftText: {
-    flex: 1,
-    flexDirection: 'row',
-    left:0,
+    color: 'white',
     fontSize: 14,
     fontWeight: 'bold',
-    paddingLeft: 2,
+    paddingLeft: 5,
   },
   topRightText: {
     right: 0,
     fontSize: 14,
     fontWeight: 'bold',
   },
-  bottomLeftText: {
+  DirectionText: {
     flex: 1,
     flexDirection: 'row',
     left: 0,
     fontSize: 14,
     fontWeight: 'bold',
+    paddingLeft: 30,
   },
   lineContainer: { 
     //flex: 1, 
     //flexDirection: 'row',
     justifyContent: 'center', // Center the line vertically 
-    
+    width: '92%',
+    alignSelf: 'center',    
   },
   line: {
     flex: 1,
@@ -206,17 +233,12 @@ const styles = StyleSheet.create(
   label: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#000000',
+    color: '#ffffff',
   },
   toprowcontainer: {
     color: '#f5f5f5',
     flex: 1,
     flexDirection: 'row',
   },
-  labelcontainer: {
-    paddingRight: 4,
-    paddingLeft: 4,
-    backgroundColor: '#ffffff'
-  }
 });
 

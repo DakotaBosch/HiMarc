@@ -41,22 +41,17 @@ const parseCSV = () => {
     // Find start_time where stop_sequence is 1
     const startStop = trip.stops.find(stop => stop.stop_sequence === minStopSequence);
     if (startStop) {
-      console.log(startStop.arrival_time);
-      trip.start_time = formatTime(startStop.arrival_time);
-      console.log(trip.start_time);
+      trip.start_time = (startStop.arrival_time);
+      trip.start_time_short = formatTime(startStop.arrival_time);
     }
 
     // Find end_time from the last stop in the array
     if (trip.stops.length > 0) {
-      console.log('stop:');
-      console.log(trip.stops[trip.stops.length-1].arrival_time);
       trip.end_time = (trip.stops[trip.stops.length - 1].arrival_time);
       trip.end_time_short = formatTime(trip.stops[trip.stops.length - 1].arrival_time);
-      console.log(trip.end_time);
     }
 
   });
-  console.log('finished:~``````````````~~~~~~~~~~~')
   return Object.values(trips);
   
 
@@ -69,7 +64,11 @@ const parseCSV = () => {
       return null; // Return null for invalid time format
     }
     const [hours, minutes] = timeString.split(':'); // Split time string into hours and minutes
-    return `${parseInt(hours)}:${minutes}`; // Remove leading zeros from hours and keep minutes
+    let hour = parseInt(hours);
+    const period = hour >= 12 ? 'PM' : 'AM';
+    hour = hour % 12 || 12;
+
+    return `${hour}:${minutes} ${period}`; // Remove leading zeros from hours and keep minutes
   }
 };
 
