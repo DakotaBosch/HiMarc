@@ -76,11 +76,11 @@ export default function Index() {
   }, []);  // Empty dependency array ensures it runs only once when the component mounts
 
 const TrainCard = ({ TrainData }) => {
-    const [trainPosition, setTrainPosition] = useState(Math.random() * 100); // Combine function call with initial state
+    const [trainPosition, setTrainPosition] = useState(TrainData.completionPercentage); // Combine function call with initial state
     const [modifiedTrainData, setModifiedTrainData] = useState(TrainData);
 
     const moveTrain = () => {
-     setTrainPosition(Math.random() * 100); // Inline random position generation
+     setTrainPosition(TrainData.completionPercentage || 0); // Inline random position generation
   };
 
     useEffect(() => {

@@ -7,6 +7,8 @@
 //
 let data1;
 let data2;
+let data3;
+
 data1 =`trip_id,route_id,service_id,trip_headsign,trip_short_name,direction_id,block_id,shape_id,wheelchair_accessible,bikes_allowed
 Train400,11705,101P,BALTIMORE,Train 400,1,401862,116576,1,1
 Train401,11705,101P,WASHINGTON,Train 401,0,401836,116513,1,1
@@ -192,6 +194,25 @@ data2 = `route_id,agency_id,route_short_name,route_long_name,route_desc,route_ty
 11705,1,MARC,PENN - WASHINGTON,,2,,FF8000,FFFFFF
 11706,1,MARC,CAMDEN - WASHINGTON,,2,,FF8000,FFFFFF`;
 
+data3 =`service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+101P,1,1,1,1,1,0,0,20221114,20251231
+101PF,0,0,0,0,1,0,0,20240429,20251231
+101PMT,1,1,1,1,0,0,0,20240429,20251231
+101C,1,1,1,1,1,0,0,20221114,20251231
+101B,1,1,1,1,1,0,0,20221114,20251231
+102,0,0,0,0,0,1,0,20221114,20251231
+103,0,0,0,0,0,0,1,20221114,20251231
+104,0,0,0,0,1,0,0,20221114,20251231
+101PennR,0,0,0,0,0,0,0,20221114,20251231
+101CamdenR,0,0,0,0,0,0,0,20221114,20251231
+101BrunswickR,0,0,0,0,0,0,0,20221114,20251231
+101PennRP,0,0,0,0,0,0,0,20221114,20251231
+101CamdenRP,0,0,0,0,0,0,0,20221114,20251231
+101BrunswickRP,0,0,0,0,0,0,0,20221114,20251231
+103Normal,0,0,0,0,0,0,1,20221114,20251231
+103Amtrak,0,0,0,0,0,0,0,20221114,20251231
+PennHoliday24Special,0,0,0,0,0,0,0,20241212,20241231`;
+
 const convertToJSON = async (filePath) => {
     try {
         let data;
@@ -199,7 +220,8 @@ const convertToJSON = async (filePath) => {
             data = data1;
         } else if (filePath === 2) {
             data = data2; }
-
+          else if (filePath === 3) {
+	    data = data3; }
 
         const lines = data.split('\n');
         const headers = lines[0].split(',');

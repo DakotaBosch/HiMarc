@@ -7,6 +7,7 @@ import { Asset } from 'expo-asset';
 let train_info;
 let line_info;
 let stop_info;
+let calendar_info;
 
 async function getTrainInfo() {
   train_info = await convertToJSON(1);
@@ -20,9 +21,14 @@ async function getStopInfo() {
   stop_info = await stopfetch();
 }
 
+async function getCalendarInfo() {
+  calendar_info = await convertToJSON(3);
+}
+
 getTrainInfo();
 getLineInfo();
 getStopInfo();
+getCalendarInfo();
 
 function getLargestTimeStop(entity) {
   let largestTimeStop = null;
@@ -99,6 +105,7 @@ async function main() {
   const TrainLine = await line_info;
   const entityArray = await train_info;
   const Trainstops = await stop_info;
+  const TrainCalendar = await calendar_info;
   let mergedDataTransient;
   
   //console.log('TrainLine: ', JSON.stringify(TrainLine, null,2));
@@ -119,8 +126,33 @@ async function main() {
   //console.log(Trainstops);
   const mergedData = mergeArraysByPrimaryKey(transData, Trainstops, 'trip_id');
   //console.log(JSON.stringify(mergedData, null, 2));
+   
+  //console.log(JSON.stringify(TrainCalendar, null, 2));
+  const mergedData2 = mergeArraysByPrimaryKey_LeftJoin(mergedData, TrainCalendar, 'service_id');
+  console.log(JSON.stringify(mergedData2, null, 2));
+  
 
-  const sortedData = filterPastEvents(mergedData);
+  const sortedData = filterPastEvents(mergedData2);
+  //console.log(JSON.stringify(sortedData, null, 2));
+
+  sortedData.forEach(trip => {
+    const startTimeMS = convertTimeToMilliseconds(trip.start_time);
+    const endTimeMS = convertTimeToMilliseconds(trip.end_time);
+    const delayMS = isNaN(trip.delay) ? 0 : trip.delay * 60 * 1000; // Convert delay to milliseconds, handling NaN as 0
+    const currentTimeMS = new Date().getTime() % (24 * 3600 * 1000); // Current milliseconds in the day
+
+    const totalTimeMS = endTimeMS - startTimeMS + delayMS;
+    let elapsedTimeMS = Math.max(currentTimeMS - startTimeMS, 0); // Ensure non-negative
+    
+    if (endTimeMS >= currentTimeMS) {
+      elapsedTimeMS = 0;
+    }
+
+    console.log(totalTimeMS, elapsedTimeMS) 
+    trip.completionPercentage = (elapsedTimeMS / totalTimeMS) * 100;
+  });
+  
+  console.log(JSON.stringify(sortedData, null, 2));
 
   return sortedData;
 }
@@ -129,7 +161,7 @@ async function main() {
 function filterPastEvents(events) {
   //const currentTime = new Date().getTime(); // Get the current time in milliseconds
   const currentTime = new Date().getTime() - new Date().setHours(0, 0, 0, 0);
-  const tenHoursInMilliseconds = 10 * 60 * 60 * 1000; // 10 hours in milliseconds
+  const BufferInMilliseconds = 10 * 60 * 60 * 1000; // 10 hours in milliseconds
 
   return events.filter(event => {
     //console.log(event.end_time);
@@ -137,14 +169,21 @@ function filterPastEvents(events) {
     const endTime = convertTimeToMilliseconds(event.end_time);
 
     // Get the delay in milliseconds (if present), else set it to 0
-    const delay = event.delay ? event.delay * 1000 : 0;
+    const delay = (event.delay && !isNaN(event.delay)) ? event.delay * 1000 : 0;
+ 
+    console.log(event.trip_id, currentTime, endTime, delay, isEventToday(event));
     
-    //console.log(currentTime, endTime, delay);
-
     // conditions to return train
-    return (endTime + delay >= currentTime) && (endTime <= currentTime + tenHoursInMilliseconds);
+    return (endTime + delay >= currentTime) && (endTime <= currentTime + BufferInMilliseconds)&&  isEventToday(event);
   });
 }
+
+function isEventToday(event) {
+  const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  const today = daysOfWeek[new Date().getDay()];
+  return event[today] === "1";
+}
+
 
 function convertTimeToMilliseconds(timeString) {
   // Split the time string into hours, minutes, and seconds

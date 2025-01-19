@@ -12,7 +12,7 @@ export default function TabLayout() {
       <View 
 	style = {{
 		backgroundColor: '#004F98', 
-		height: 140, 
+		height: '16%', 
 		alignItems: 'center', 
 	}} 
       >
@@ -38,6 +38,7 @@ export default function TabLayout() {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: '#000000', // Dark gray background color for the tab bar
+	  height: 0, //temp hide tabbar
         },
       })}
     >
