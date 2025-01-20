@@ -129,7 +129,7 @@ async function main() {
    
   //console.log(JSON.stringify(TrainCalendar, null, 2));
   const mergedData2 = mergeArraysByPrimaryKey_LeftJoin(mergedData, TrainCalendar, 'service_id');
-  console.log(JSON.stringify(mergedData2, null, 2));
+ // console.log(JSON.stringify(mergedData2, null, 2));
   
 
   const sortedData = filterPastEvents(mergedData2);
@@ -163,7 +163,7 @@ async function main() {
  
   
  
-  console.log(JSON.stringify(sortedData, null, 2));
+  //console.log(JSON.stringify(sortedData, null, 2));
 
   return sortedData;
 }
@@ -182,7 +182,7 @@ function filterPastEvents(events) {
     // Get the delay in milliseconds (if present), else set it to 0
     const delay = (event.delay && !isNaN(event.delay)) ? event.delay * 1000 : 0;
  
-    console.log(event.trip_id, currentTime, endTime, delay, isEventToday(event));
+    //console.log(event.trip_id, currentTime, endTime, delay, isEventToday(event));
     
     // conditions to return train
     return (endTime + delay >= currentTime) && (endTime <= currentTime + BufferInMilliseconds)&&  isEventToday(event);

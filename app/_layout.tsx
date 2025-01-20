@@ -18,7 +18,7 @@ export default function TabLayout() {
       >
 	<SafeAreaView style={{ flex:1 }}>
  	  <Image 
-	    source={require('@/assets/images/Marc_w.png')} 
+	    source={require('@/assets/images/marc_white.png')} 
 	    style={{ width: 200}} resizeMode='contain' 
 	  />
 	</SafeAreaView>	

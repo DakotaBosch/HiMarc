@@ -8,16 +8,16 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "jsEngine": "hermes",
     "ios": {
-      "supportsTablet": true,
-      "hermes": true
+      "supportsTablet": true
     },
     "android": {
+      "package": "com.himarc.himarc",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "hermes": true
+      }
     },
     "web": {
       "bundler": "metro",
@@ -34,16 +34,15 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ],
-      [
-      "expo-asset",
-	{
-	"assets": ["./assets/images/Marc_w.png"]
-	}
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cac9a421-e73e-4c3c-8009-040cd155094e"
+      }
     }
   }
 }
