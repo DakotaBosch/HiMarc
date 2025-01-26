@@ -153,8 +153,8 @@ async function main() {
   
     if (trip.completionPercentage < 2) {
       trip.completionPercentage = 2;
-    } else if (train.completionPercentage > 96) {
-      train.completionPerecentage = 96;
+    } else if (trip.completionPercentage > 96) {
+      trip.completionPerecentage = 96;
     }
 
     });
