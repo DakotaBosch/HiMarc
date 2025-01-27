@@ -1,47 +1,42 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router'; // Import useRouter
+import React, { useEffect, useState } from 'react';
+import { View, Text } from 'react-native';
+import { useLocalSearchParams } from 'expo-router';
 
-export default function TrainDetails() {
-  const router = useRouter(); // Initialize the router to access the back functionality
+const TrainDetails = () => {
+  const { trainData } = useLocalSearchParams();
+  const [parsedTrainData, setParsedTrainData] = useState(null);
 
-  const handleGoBack = () => {
-    router.back(); // Navigate back to the previous page
-  };
+  useEffect(() => {
+    if (trainData) {
+      try {
+        // Deserialize the trainData string back into an object
+        console.log("trainData:", trainData);
+        const parsedData = JSON.parse(decodeURIComponent(trainData));
+
+        // Log the structure of the parsed data (first level)
+        console.log("Parsed TrainData structure:", Object.keys(parsedData));
+
+        setParsedTrainData(parsedData);
+      } catch (error) {
+        console.error("Error parsing trainData:", error);
+        setParsedTrainData(null); // You can adjust this to set an error state if needed
+      }
+    }
+  }, [trainData]);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Train Details Page (No Data)</Text>
-      
-      {/* Back button */}
-      <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
-        <Text style={styles.backButtonText}>Go Back</Text>
-      </TouchableOpacity>
+    <View>
+      {parsedTrainData ? (
+        <>
+          <Text>Trip ID: {parsedTrainData?.trip_id}</Text>
+          {/* Render other details from parsedTrainData */}
+        </>
+      ) : (
+        <Text>Loading...</Text>
+      )}
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  text: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  backButton: {
-    padding: 10,
-    backgroundColor: '#004F98',
-    borderRadius: 5,
-  },
-  backButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-});
+export default TrainDetails;
 

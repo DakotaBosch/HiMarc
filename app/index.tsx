@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { ScrollView, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, Title, Paragraph, Provider as PaperProvider, DarkTheme } from 'react-native-paper';
 import livefetch from '../utils/merge';
 import Icon from 'react-native-ico-mingcute-tiny-bold-filled';
 import { useRouter } from 'expo-router';
+import React, { useState, useEffect } from 'react';
 
 export default function Index() {
   const [TrainData, setTrainData] = useState([]);
@@ -98,9 +98,11 @@ export default function Index() {
     }, [TrainData]);
 
     const handleCardPress = () => {
-      // Navigates to the new page, passing the train data as a parameter
-      router.push(`/trainDetails`);
+      const serializedData = JSON.stringify(TrainData);
+      // Navigate to the new screen with `trip_id` in the URL
+      router.push(`/trainDetails?trainData=${encodeURIComponent(serializedData)}`);
     };
+    
 
     return (
       <TouchableOpacity onPress={handleCardPress}>
