@@ -1,42 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
+import { Dimensions } from 'react-native';
 
 // Function to format time from HH:MM:SS to H:MM
 function formatTime(timeString) {
- // Ensure the timeString is in HH:MM:SS format
- if (typeof timeString !== 'string' || timeString.split(':').length !== 3) {
-   console.error("Invalid time format:", timeString); // Log invalid format for debugging
-   return null; // Return null for invalid time format
- }
- const [hours, minutes] = timeString.split(':'); // Split time string into hours and minutes
- let hour = parseInt(hours);
- const period = hour >= 12 ? 'PM' : 'AM';
- hour = hour % 12 || 12;
- return `${hour}:${minutes} ${period}`; // Remove leading zeros from hours and keep minutes
+  // Ensure the timeString is in HH:MM:SS format
+  if (typeof timeString !== 'string' || timeString.split(':').length !== 3) {
+    console.error("Invalid time format:", timeString); // Log invalid format for debugging
+    return null; // Return null for invalid time format
+  }
+  const [hours, minutes] = timeString.split(':'); // Split time string into hours and minutes
+  let hour = parseInt(hours);
+  const period = hour >= 12 ? 'PM' : 'AM';
+  hour = hour % 12 || 12;
+  return `${hour}:${minutes} ${period}`; // Remove leading zeros from hours and keep minutes
 }
-
-
 
 function cleanStopName(name) {
   // Define substrings to remove
   const substringsToRemove = ['MARC', 'nb'];
-  
+
   // Remove each substring from the name
   let cleanedName = name;
   substringsToRemove.forEach(substring => {
     cleanedName = cleanedName.replace(new RegExp(substring, 'gi'), '').trim(); // 'gi' for case-insensitive global match
   });
-  
+
   return cleanedName;
 }
 
-
 const TrainDetails = () => {
+  const navigation = useNavigation();
   const { trainData } = useLocalSearchParams();
   const [parsedTrainData, setParsedTrainData] = useState(null);
-  
-  
 
   useEffect(() => {
     if (trainData) {
@@ -72,11 +70,20 @@ const TrainDetails = () => {
           </View>
         ))}
       </View>
+
+      {/* Back Button at the Bottom */}
+      <TouchableOpacity 
+        style={styles.backButton} 
+        onPress={() => navigation.goBack()}>
+        <Text style={styles.backText}>Go Back</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
 
 export default TrainDetails;
+
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -98,7 +105,7 @@ const styles = StyleSheet.create({
   timeline: {
     borderLeftWidth: 2,
     borderLeftColor: '#888',
-    position: 'relative', 
+    position: 'relative',
   },
   timelineItem: {
     flexDirection: 'row',
@@ -113,7 +120,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF8000',
     position: 'absolute',
     left: -7,
-    top: 5, 
+    top: 5,
   },
   stopDetails: {
     flexDirection: 'column',
@@ -127,6 +134,22 @@ const styles = StyleSheet.create({
   arrivalTime: {
     fontSize: 14,
     color: '#666',
+  },
+  backButton: {
+    width: width * 0.25,
+    marginLeft: -60,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: '#FF8000',
+    borderRadius: 5,
+    alignSelf: 'center',
+    marginBottom: 30,
+    marginTop: 30,
+  },
+  backText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 
