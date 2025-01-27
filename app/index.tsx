@@ -105,7 +105,7 @@ export default function Index() {
     
 
     return (
-      <TouchableOpacity onPress={handleCardPress}>
+      <TouchableOpacity onPress={handleCardPress} activeOpacity ={1}>
         <Card style={styles.card}>
           <Card.Content>
             <View style={styles.cardContainer}>

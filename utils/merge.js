@@ -1,6 +1,6 @@
 const convertToJSON = require('./csv_to_json.js');
 const fetchstatus = require('./status.js');
-const stopfetch = require('./stops_to_json')
+const stopfetch = require('./schedule_to_json')
 import * as FileSystem from 'expo-file-system';
 import { Asset } from 'expo-asset';
 
@@ -8,6 +8,7 @@ let train_info;
 let line_info;
 let stop_info;
 let calendar_info;
+let schedule_info;
 
 async function getTrainInfo() {
   train_info = await convertToJSON(1);
@@ -17,17 +18,22 @@ async function getLineInfo() {
   line_info= await convertToJSON(2);
 }
 
-async function getStopInfo() {
-  stop_info = await stopfetch();
+async function getScheduleInfo() {
+  schedule_info = await stopfetch();
 }
 
 async function getCalendarInfo() {
   calendar_info = await convertToJSON(3);
 }
 
+async function getStopInfo() {
+  stop_info = await convertToJSON(4);
+}
+
+getStopInfo();
 getTrainInfo();
 getLineInfo();
-getStopInfo();
+getScheduleInfo();
 getCalendarInfo();
 
 function getLargestTimeStop(entity) {
@@ -89,7 +95,6 @@ function mergeArraysByPrimaryKey_LeftJoin(array1, array2, key) {
 }
 
 
-//unused
 function mergeArraysByPrimaryKey(array1, array2, key) {
   return array1
     .map(item1 => {
@@ -99,13 +104,34 @@ function mergeArraysByPrimaryKey(array1, array2, key) {
     .filter(item => item !== null); 
 }
 
+
+function mergeArraysByPrimaryKey_LeftJoin_nested(array1, array2, key) {
+  return array1.map(item1 => {
+    const updatedStops = item1.stops.map(stop => {
+      const match = array2.find(item2 => {
+        return stop[key] === item2[key]; // Compare them
+      });
+      return match ? { ...stop, ...match } : stop; // Merge or return the original stop
+    });
+
+    return {
+      ...item1,
+      stops: updatedStops
+    };
+  });
+}
+
+
+
 // Function to call fetchAndFormatData, merge data, and print the merged data
 async function main() {
   const TrainDelay = await fetchAndFormatData();
   const TrainLine = await line_info;
   const entityArray = await train_info;
-  const Trainstops = await stop_info;
+  const Trainschedule = await schedule_info;
   const TrainCalendar = await calendar_info;
+  const TrainStops = await stop_info;
+
   let mergedDataTransient;
   
   //console.log('TrainLine: ', JSON.stringify(TrainLine, null,2));
@@ -124,17 +150,18 @@ async function main() {
   const transData = mergeArraysByPrimaryKey(mergedDataTransient, TrainLine, 'route_id');
   //console.log('Merged Data:s', JSON.stringify(mergedData, null, 2));
   //console.log(Trainstops);
-  const mergedData = mergeArraysByPrimaryKey(transData, Trainstops, 'trip_id');
+  const mergedData = mergeArraysByPrimaryKey(transData, Trainschedule, 'trip_id');
   //console.log(JSON.stringify(mergedData, null, 2));
    
   //console.log(JSON.stringify(TrainCalendar, null, 2));
   const mergedData2 = mergeArraysByPrimaryKey_LeftJoin(mergedData, TrainCalendar, 'service_id');
  // console.log(JSON.stringify(mergedData2, null, 2));
   
-
-  const sortedData = filterPastEvents(mergedData2);
-  //console.log(JSON.stringify(sortedData, null, 2));
-
+  const mergedData3 = mergeArraysByPrimaryKey_LeftJoin_nested(mergedData2, TrainStops, 'stop_id');
+  //console.log(JSON.stringify(mergedData3, null, 2));
+  //console.log(JSON.stringify(mergedData2, null, 2));
+  const sortedData = filterPastEvents(mergedData3);
+  console.log(JSON.stringify(sortedData, null, 2));
 
   sortedData.forEach(trip => {
     const startTimeMS = convertTimeToMilliseconds(trip.start_time);
@@ -172,7 +199,7 @@ async function main() {
 function filterPastEvents(events) {
   //const currentTime = new Date().getTime(); // Get the current time in milliseconds
   const currentTime = new Date().getTime() - new Date().setHours(0, 0, 0, 0);
-  const BufferInMilliseconds = 10 * 60 * 60 * 1000; // 10 hours in milliseconds
+  const BufferInMilliseconds = 12 * 60 * 60 * 1000; // 10 hours in milliseconds
 
   return events.filter(event => {
     //console.log(event.end_time);
@@ -185,7 +212,7 @@ function filterPastEvents(events) {
     //console.log(event.trip_id, currentTime, endTime, delay, isEventToday(event));
     
     // conditions to return train
-    return (endTime + delay >= currentTime) && (endTime <= currentTime + BufferInMilliseconds)&&  isEventToday(event);
+    return (endTime + delay >= currentTime); //&& (endTime <= currentTime + BufferInMilliseconds)&&  isEventToday(event);
   });
 }
 
