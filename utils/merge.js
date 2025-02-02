@@ -76,7 +76,7 @@ async function fetchAndFormatData() {
     // Format the data for the TrainCard component
     const formattedTrainData = largestStops.map(stop => ({
       trip_id: `${stop.trip_id}`,
-      delay: `${Math.round(stop.delay / 60)} min delay`
+      delay: isNaN(stop.delay) || stop.delay < 30 ? 'On Time' : `${Math.round(stop.delay / 60)} min delay`,
     }));
 
     //console.log(formattedTrainData)
@@ -186,8 +186,14 @@ async function main() {
 
     });
 
-  sortedData.sort((a, b) => b.completionPercentage - a.completionPercentage);
- 
+    sortedData.sort((a, b) => {
+      // Sort by completion percentage in descending order
+      if (b.completionPercentage !== a.completionPercentage) {
+        return b.completionPercentage - a.completionPercentage;
+      }
+      // If completion percentages are equal, sort by start time in ascending order
+      return new Date(a.start_time).getTime() - new Date(b.start_time).getTime();
+    });
   
  
   //console.log(JSON.stringify(sortedData, null, 2));
@@ -212,7 +218,7 @@ function filterPastEvents(events) {
     //console.log(event.trip_id, currentTime, endTime, delay, isEventToday(event));
     
     // conditions to return train
-    return (endTime + delay >= currentTime); //&& (endTime <= currentTime + BufferInMilliseconds)&&  isEventToday(event);
+    return (endTime + delay >= currentTime) && (endTime <= currentTime + BufferInMilliseconds)&&  isEventToday(event);
   });
 }
 

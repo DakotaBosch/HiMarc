@@ -35,7 +35,7 @@ export default function Index() {
     let backgroundColor;
     switch (routeLongName) {
       case 'CAMDEN':
-        backgroundColor = 'orange';
+        backgroundColor = '#F26F21';
         break;
       case 'PENN':
         backgroundColor = '#004F98';
@@ -49,10 +49,10 @@ export default function Index() {
 
     return {
       flexDirection: 'row',
+      alignItems: 'top',
       paddingRight: 4,
       paddingLeft: 4,
       backgroundColor: backgroundColor,
-      alignItems: 'center',
       justifyContent: 'flex-start'
     };
   };
@@ -77,8 +77,8 @@ export default function Index() {
     const moveTrain = () => {
       if (TrainData.completionPercentage < 2) {
         setTrainPosition(2);
-      } else if (TrainData.completionPercentage > 96) {
-        setTrainPosition(96);
+      } else if (TrainData.completionPercentage > 92) {
+        setTrainPosition(92);
       } else {
         setTrainPosition(TrainData.completionPercentage || 0);
       }
@@ -89,10 +89,14 @@ export default function Index() {
     }, [TrainData.completionPercentage]);
 
     useEffect(() => {
+      const capitalizeFirstLetter = (str: string) =>
+        str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
       const updatedData = {
         ...TrainData,
         route_long_name: TrainData.route_long_name.split(' ')[0],
-        trip_id: TrainData.trip_id.replace(/[^0-9]/g, '')
+        trip_id: TrainData.trip_id.replace(/[^0-9]/g, ''),
+        trip_headsign: capitalizeFirstLetter(TrainData.trip_headsign) // Apply capitalization
       };
       setModifiedTrainData(updatedData);
     }, [TrainData]);
@@ -112,19 +116,19 @@ export default function Index() {
               <View style={styles.toprowcontainer}>
                 <View style={dynamicStyles(modifiedTrainData.route_long_name)}>
                   <Text style={styles.label}>{modifiedTrainData.route_long_name}</Text>
-                  <Text style={styles.topLeftText}>{modifiedTrainData.trip_id}</Text>
                 </View>
-                <Text style={styles.DirectionText}> ---> {TrainData.trip_headsign}</Text>
+                <Text style={styles.topLeftText}>{modifiedTrainData.trip_id}</Text>
+                <Text style={styles.DirectionText}>--> {modifiedTrainData.trip_headsign}</Text>
                 <Text style={styles.topRightText}>{TrainData.delay}</Text>
               </View>
               <View style={styles.cardContent}>
-                <Title style={styles.title}></Title>
+                <Title style={styles.ddtitle}></Title>
                 <View style={styles.lineContainer}>
                   <View style={styles.line}></View>
                   <Icon
                     name="train"
-                    size={100}
-                    style={[styles.trainIcon, { left: `${trainPosition}%` }]}
+		    height = "26" width = "26"
+                    style={[styles.trainIcon, { left: `${trainPosition}%`, top: -22 }]}
                   />
                   <View style={styles.dotLeft}></View>
                   <View style={styles.dotRight}></View>
@@ -169,27 +173,30 @@ const styles = StyleSheet.create({
   card: {
     marginBottom: 10,
     width: '100%',
+    backgroundColor: 'white',
   },
-  cardContainer: {},
+  cardContainer: {
+  },
   cardContent: {
     marginTop: 0,
-    marginBottom: 0,
+    marginBottom: -20,
   },
   topLeftText: {
-    color: 'white',
-    fontSize: 14,
+    alignItems: 'center',
+    marginLeft:4,
+    flexDirection: 'row',
+    left: 0,
+    fontSize: 18,
     fontWeight: 'bold',
-    paddingLeft: 5,
   },
   topRightText: {
+    position: 'absolute',
     right: 0,
     fontSize: 14,
     fontWeight: 'bold',
   },
   DirectionText: {
-    flex: 1,
     flexDirection: 'row',
-    left: 0,
     fontSize: 14,
     fontWeight: 'bold',
     paddingLeft: 30,
@@ -201,21 +208,18 @@ const styles = StyleSheet.create({
   },
   line: {
     flex: 1,
-    height: 1,
+    height: 2,
     backgroundColor: 'black',
-    marginVertical: 4,
+    marginTop: 3,
   },
   trainIcon: {
-    position: 'absolute',
-    top: -14,
-    transform: [{ translateX: -10 }],
   },
   dotLeft: {
     position: 'absolute',
     left: 0,
     top: 0,
-    width: 8,
-    height: 8,
+    width: 9,
+    height: 9,
     backgroundColor: 'black',
     borderRadius: 4,
   },
@@ -223,13 +227,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     top: 0,
-    width: 8,
-    height: 8,
+    width: 9,
+    height: 9,
     backgroundColor: 'black',
     borderRadius: 4,
   },
   label: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#ffffff',
   },

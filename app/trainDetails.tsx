@@ -20,7 +20,7 @@ function formatTime(timeString) {
 
 function cleanStopName(name) {
   // Define substrings to remove
-  const substringsToRemove = ['MARC', 'nb'];
+  const substringsToRemove = ['MARC', ' nb', ' sb', ' wb', ' eb'];
 
   // Remove each substring from the name
   let cleanedName = name;
@@ -58,7 +58,7 @@ const TrainDetails = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.header}>Train Stops</Text>
+      <Text style={styles.header}>Schedule</Text>
       <View style={styles.timeline}>
         {parsedTrainData.stops.map((stop, index) => (
           <View key={index} style={styles.timelineItem}>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    fontSize: 20,
+    fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 26,
     textAlign: 'center',
