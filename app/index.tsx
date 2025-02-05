@@ -1,5 +1,5 @@
 import { ScrollView, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Card, Title, Paragraph, Provider as PaperProvider, DarkTheme } from 'react-native-paper';
+import { Card, Title, Provider as PaperProvider, Button } from 'react-native-paper';
 import livefetch from '../utils/merge';
 import Icon from 'react-native-ico-mingcute-tiny-bold-filled';
 import { useRouter } from 'expo-router';
@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 export default function Index() {
   const [TrainData, setTrainData] = useState([]);
   const router = useRouter();
+  const [selectedLine, setSelectedLine] = useState(null);
 
   // Function to get the entity with the largest time in stop_time_update for each entity
   function getLargestTimeStop(entity) {
@@ -70,6 +71,35 @@ export default function Index() {
     fetchData();
   }, []);
 
+
+  // Filtered train data based on selected line
+  const filteredTrains = selectedLine
+    ? TrainData.filter(train => train.route_long_name.split(' ')[0] === selectedLine)
+    : TrainData;
+
+  const FilterCard = () => (
+    <Card style={styles.filterCard}>
+      <Card.Content style={{ paddingVertical: 4 }}>
+        <Text style={styles.filterTitle}>Line</Text>
+        <View style={styles.filterButtons}>
+          {['CAMDEN', 'PENN', 'BRUNSWICK'].map(line => (
+            <Button
+              key={line}
+              mode={selectedLine === line ? 'contained' : 'outlined'}
+              onPress={() => setSelectedLine(line === selectedLine ? null : line)}
+              style={styles.filterButton}
+	      labelStyle={{ color: 'black' }}
+              theme={{ colors: { primary: '#D3D3D3' } }}
+            >
+              {line}
+            </Button>
+          ))}
+        </View>
+      </Card.Content>
+    </Card>
+  );
+
+
   const TrainCard = ({ TrainData }) => {
     const [trainPosition, setTrainPosition] = useState(TrainData.completionPercentage);
     const [modifiedTrainData, setModifiedTrainData] = useState(TrainData);
@@ -118,7 +148,7 @@ export default function Index() {
                   <Text style={styles.label}>{modifiedTrainData.route_long_name}</Text>
                 </View>
                 <Text style={styles.topLeftText}>{modifiedTrainData.trip_id}</Text>
-                <Text style={styles.DirectionText}>--> {modifiedTrainData.trip_headsign}</Text>
+                <Text style={styles.DirectionText}>Direction: {modifiedTrainData.trip_headsign}</Text>
                 <Text style={styles.topRightText}>{TrainData.delay}</Text>
               </View>
               <View style={styles.cardContent}>
@@ -154,18 +184,26 @@ export default function Index() {
   );
 
   return (
+
     <PaperProvider>
-      <View
-        style={{
-          flex: 1,
+      <View 
+	style={{ 
+	  flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
           padding: 10,
-        }}
-      >
-        <TrainList trains={TrainData} />
+	}}>
+        {/* Background at the top */}
+        <View style={styles.backgroundTop}></View>
+        <FilterCard />
+        <ScrollView>
+          {filteredTrains.map((train, index) => (
+            <TrainCard key={index} TrainData={train} />
+          ))}
+        </ScrollView>
       </View>
     </PaperProvider>
+
   );
 }
 
@@ -186,7 +224,7 @@ const styles = StyleSheet.create({
     marginLeft:4,
     flexDirection: 'row',
     left: 0,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   topRightText: {
@@ -196,9 +234,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   DirectionText: {
+    
     flexDirection: 'row',
     fontSize: 14,
-    fontWeight: 'bold',
     paddingLeft: 30,
   },
   lineContainer: {
@@ -233,13 +271,38 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   label: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     color: '#ffffff',
   },
   toprowcontainer: {
     flex: 1,
     flexDirection: 'row',
+  },
+  filterCard: {
+    marginBottom: 10,
+    padding: 10,
+    backgroundColor: 'white',
+  },
+  filterTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  filterButtons: {  
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  filterButton: {
+    marginHorizontal: 5,
+  },
+  backgroundTop: {
+    position: 'absolute',
+    top: 0,
+    width: '110%',
+    height: '6%',
+    backgroundColor: '#004F98',  // Adjust color as needed
+    margin: -10,
   },
 });
 

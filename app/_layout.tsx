@@ -9,22 +9,23 @@ export default function TabLayout() {
 
   const BasicHeader = () => {
     return (
-      <View 
-	style = {{
-		backgroundColor: '#004F98', 
-		height: '16%', 
-		alignItems: 'center', 
-	}} 
+      <View
+        style = {{
+                backgroundColor: '#004F98',
+                height: '14%',
+                alignItems: 'center',
+        }}
       >
-	<SafeAreaView style={{ flex:1 }}>
- 	  <Image 
-	    source={require('@/assets/images/marc_white.png')} 
-	    style={{ width: 200}} resizeMode='contain' 
-	  />
-	</SafeAreaView>	
+        <SafeAreaView style={{ flex:1 }}>
+          <Image
+            source={require('@/assets/images/marc_white.png')}
+            style={{ width: 200}} resizeMode='contain'
+          />
+        </SafeAreaView>
       </View>
     );
   };
+
 
 
   return (

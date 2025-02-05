@@ -161,7 +161,7 @@ async function main() {
   //console.log(JSON.stringify(mergedData3, null, 2));
   //console.log(JSON.stringify(mergedData2, null, 2));
   const sortedData = filterPastEvents(mergedData3);
-  console.log(JSON.stringify(sortedData, null, 2));
+  //console.log(JSON.stringify(sortedData, null, 2));
 
   sortedData.forEach(trip => {
     const startTimeMS = convertTimeToMilliseconds(trip.start_time);
