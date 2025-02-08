@@ -1,4 +1,4 @@
-import { ScrollView, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, View, StyleSheet, TouchableOpacity, RefreshControl } from 'react-native';
 import { Card, Title, Provider as PaperProvider, Button } from 'react-native-paper';
 import livefetch from '../utils/merge';
 import Icon from 'react-native-ico-mingcute-tiny-bold-filled';
@@ -9,6 +9,19 @@ export default function Index() {
   const [TrainData, setTrainData] = useState([]);
   const router = useRouter();
   const [selectedLine, setSelectedLine] = useState(null);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  async function fetchData() {
+    try {
+      setIsRefreshing(true); // Start refresh
+      const formattedTrainData = await livefetch();
+      setTrainData(formattedTrainData);
+    } catch (error) {
+      console.error('Error fetching or processing data:', error);
+    } finally {
+      setIsRefreshing(false); // End refresh
+    }
+  }
 
   // Function to get the entity with the largest time in stop_time_update for each entity
   function getLargestTimeStop(entity) {
@@ -58,16 +71,7 @@ export default function Index() {
     };
   };
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const formattedTrainData = await livefetch();
-        setTrainData(formattedTrainData);
-      } catch (error) {
-        console.error('Error fetching or processing data:', error);
-      }
-    }
-
+  useEffect(() => {    
     fetchData();
   }, []);
 
@@ -103,8 +107,8 @@ export default function Index() {
   const TrainCard = ({ TrainData }) => {
     const [trainPosition, setTrainPosition] = useState(TrainData.completionPercentage);
     const [modifiedTrainData, setModifiedTrainData] = useState(TrainData);
-
-    const moveTrain = () => {
+    
+    useEffect(() => {
       if (TrainData.completionPercentage < 2) {
         setTrainPosition(2);
       } else if (TrainData.completionPercentage > 92) {
@@ -112,10 +116,6 @@ export default function Index() {
       } else {
         setTrainPosition(TrainData.completionPercentage || 0);
       }
-    };
-
-    useEffect(() => {
-      moveTrain();
     }, [TrainData.completionPercentage]);
 
     useEffect(() => {
@@ -137,7 +137,6 @@ export default function Index() {
       router.push(`/trainDetails?trainData=${encodeURIComponent(serializedData)}`);
     };
     
-
     return (
       <TouchableOpacity onPress={handleCardPress} activeOpacity ={1}>
         <Card style={styles.card}>
@@ -196,7 +195,9 @@ export default function Index() {
         {/* Background at the top */}
         <View style={styles.backgroundTop}></View>
         <FilterCard />
-        <ScrollView>
+        <ScrollView
+	refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={fetchData} />}
+	>
           {filteredTrains.map((train, index) => (
             <TrainCard key={index} TrainData={train} />
           ))}
@@ -281,7 +282,7 @@ const styles = StyleSheet.create({
   },
   filterCard: {
     marginBottom: 10,
-    padding: 10,
+    paddingVertical: 6,
     backgroundColor: 'white',
   },
   filterTitle: {

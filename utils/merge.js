@@ -205,7 +205,7 @@ async function main() {
 function filterPastEvents(events) {
   //const currentTime = new Date().getTime(); // Get the current time in milliseconds
   const currentTime = new Date().getTime() - new Date().setHours(0, 0, 0, 0);
-  const BufferInMilliseconds = 12 * 60 * 60 * 1000; // 10 hours in milliseconds
+  const BufferInMilliseconds = 8 * 60 * 60 * 1000; // 10 hours in milliseconds
 
   return events.filter(event => {
     //console.log(event.end_time);
