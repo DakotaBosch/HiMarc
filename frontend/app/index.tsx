@@ -4,9 +4,11 @@ import livefetch from '../utils/merge';
 import Icon from 'react-native-ico-mingcute-tiny-bold-filled';
 import { useRouter } from 'expo-router';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function Index() {
   const [TrainData, setTrainData] = useState([]);
+  const [TrainData2, setTrainData2] = useState([]);
   const router = useRouter();
   const [selectedLine, setSelectedLine] = useState(null);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -16,6 +18,11 @@ export default function Index() {
       setIsRefreshing(true); // Start refresh
       const formattedTrainData = await livefetch();
       setTrainData(formattedTrainData);
+
+      // Fetch data from the server
+      const serverResponse = await axios.get('http://localhost:3000/trains');
+      const serverTrainData = serverResponse.data;
+      setTrainData2(serverTrainData);
     } catch (error) {
       console.error('Error fetching or processing data:', error);
     } finally {

@@ -149,10 +149,10 @@ const fetchAndProcessDailyData = async () => {
 
       return {
         ...trip,
-        stop_times: stops,
-        calendar_dates: calendarDates,
-        calendar: calendar,
-        route: route
+        ...calendar,
+        ...route,      
+        service_exceptions: calendarDates
+        stops,
       };
     });
 
@@ -217,10 +217,28 @@ setInterval(fetchAndProcessDailyData, dailyTaskInterval); // Set the daily inter
 
 // Route to serve stored train data
 app.get('/trains', async (req, res) => {
-  const trains = await loadData('daily_data.json');
-  console.log(trains);
-  res.json(trains);
+  try {
+    // Load the data from the JSON files
+    const dailyData = await loadData('daily_data.json'); // Array of objects
+    const trainData = await loadData('trains.json'); // Array of objects
+
+    // Perform a left join on trip_id
+    const joinedData = dailyData.map(trip => {
+      // Find matching train info (if it exists)
+      const trainInfo = trainData.find(train => train.trip_id === trip.trip_id);
+
+      // If trainInfo exists, merge it into the trip object; otherwise, just return the trip object
+      return trainInfo ? { ...trip, ...trainInfo } : trip;
+    });
+
+    console.log('Joined Data:', joinedData); // Log the joined data
+    res.json(joinedData); // Send the joined data as JSON response
+  } catch (error) {
+    console.error('Error loading or joining train data:', error);
+    res.status(500).json({ error: error.message });
+  }
 });
+
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

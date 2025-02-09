@@ -8,15 +8,6 @@ const fetchAndFlattenTrains = async () => {
 
     console.log(data);
 
-    // Flatten data (assuming nested structures)
-    const flattenedData = data.map(train => ({
-      trip_id: train.trip_id,
-      delay: train.delay,
-      // Add more fields if needed
-    }));
-
-    console.log('Flattened Train Data:', JSON.stringify(flattenedData, null, 2));
-    return flattenedData;
   } catch (error) {
     console.error('Error fetching train data:', error);
   }
