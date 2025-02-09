@@ -6,6 +6,8 @@ const fetchAndFlattenTrains = async () => {
     const response = await axios.get('http://localhost:3000/trains');
     const data = response.data;
 
+    console.log(data);
+
     // Flatten data (assuming nested structures)
     const flattenedData = data.map(train => ({
       trip_id: train.trip_id,

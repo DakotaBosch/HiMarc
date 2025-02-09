@@ -217,7 +217,8 @@ setInterval(fetchAndProcessDailyData, dailyTaskInterval); // Set the daily inter
 
 // Route to serve stored train data
 app.get('/trains', async (req, res) => {
-  const trains = await loadData('trains.json');
+  const trains = await loadData('daily_data.json');
+  console.log(trains);
   res.json(trains);
 });
 

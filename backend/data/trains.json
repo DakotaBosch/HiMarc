@@ -1,1 +1,10 @@
-0
+[
+  {
+    "trip_id": "Train485",
+    "delay": "2 min delay"
+  },
+  {
+    "trip_id": "Train482Sunday",
+    "delay": "4 min delay"
+  }
+]
