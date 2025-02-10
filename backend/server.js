@@ -143,6 +143,11 @@ const fetchAndProcessDailyData = async () => {
         const stop = dailyData.stops.find(s => s.stop_id === st.stop_id);
         return { ...st, ...stop };
       });
+  
+      // Get the first and last stop times
+      const start_time = stops.length > 0 ? stops[0].departure_time : null; // Take departure_time from first stop
+      const end_time = stops.length > 0 ? stops[stops.length - 1].arrival_time : null; // Take arrival_time from last stop
+
       const calendarDates = dailyData.calendar_dates.filter(cd => cd.service_id === trip.service_id);
       const calendar = dailyData.calendar.find(c => c.service_id === trip.service_id);
       const route = dailyData.routes.find(r => r.route_id === trip.route_id);
@@ -150,8 +155,10 @@ const fetchAndProcessDailyData = async () => {
       return {
         ...trip,
         ...calendar,
-        ...route,      
-        service_exceptions: calendarDates
+        ...route,
+	start_time,
+	end_time,
+        service_exceptions: calendarDates,
         stops,
       };
     });
@@ -222,16 +229,43 @@ app.get('/trains', async (req, res) => {
     const dailyData = await loadData('daily_data.json'); // Array of objects
     const trainData = await loadData('trains.json'); // Array of objects
 
+    const correctTrainData = Array.isArray(trainData) ? trainData : [];  // Default to empty array if not an array
+
     // Perform a left join on trip_id
     const joinedData = dailyData.map(trip => {
       // Find matching train info (if it exists)
-      const trainInfo = trainData.find(train => train.trip_id === trip.trip_id);
+      const trainInfo = correctTrainData.find(train => train.trip_id === trip.trip_id);
 
       // If trainInfo exists, merge it into the trip object; otherwise, just return the trip object
-      return trainInfo ? { ...trip, ...trainInfo } : trip;
+      const combinedTrip = trainInfo ? { ...trip, ...trainInfo } : trip;
+
+      // Add completion_percent calculation
+      if (combinedTrip.start_time && combinedTrip.end_time && combinedTrip.delay !== undefined) {
+        const currentTime = new Date();
+        const adjustedStartTime = new Date(combinedTrip.start_time).getTime() + combinedTrip.delay * 1000; // Delay in seconds
+        const adjustedEndTime = new Date(combinedTrip.end_time).getTime() + combinedTrip.delay * 1000;
+
+        // Calculate completion percentage
+        let completionPercent = 0;
+
+        if (currentTime < adjustedStartTime) {
+          completionPercent = 0;  // If current time is before start time
+        } else if (currentTime > adjustedEndTime) {
+          completionPercent = 100;  // If current time is after end time
+        } else {
+          completionPercent = ((currentTime - adjustedStartTime) / (adjustedEndTime - adjustedStartTime)) * 100;
+        }
+
+        // Clamp the value between 0 and 100
+        completionPercent = Math.max(0, Math.min(100, completionPercent));
+
+        // Attach completion_percent to the trip object
+        combinedTrip.completion_percent = completionPercent;
+      }
+
+      return combinedTrip;
     });
 
-    console.log('Joined Data:', joinedData); // Log the joined data
     res.json(joinedData); // Send the joined data as JSON response
   } catch (error) {
     console.error('Error loading or joining train data:', error);

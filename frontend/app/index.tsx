@@ -20,9 +20,9 @@ export default function Index() {
       setTrainData(formattedTrainData);
 
       // Fetch data from the server
-      const serverResponse = await axios.get('http://localhost:3000/trains');
-      const serverTrainData = serverResponse.data;
-      setTrainData2(serverTrainData);
+      //const serverResponse = await axios.get('http://192.168.1.23:3000/trains');
+      //const serverTrainData = serverResponse.data;
+      //setTrainData2(serverTrainData);
     } catch (error) {
       console.error('Error fetching or processing data:', error);
     } finally {
