@@ -6,19 +6,7 @@ const https = require('https'); // Use https module
 const axios = require('axios');
 const admzip = require('adm-zip');
 const csvtojson = require('csvtojson');  // CSV to JSON converter
-const { Expo } = require('expo-server-sdk'); // Add Expo SDK for push notifications
 
-const app = express();
-app.use(express.json());
-app.use(require('cors')());
-
-const DATA_DIR = path.join(__dirname, 'data');
-fs.ensureDirSync(DATA_DIR); // Ensure the data directory exists
-
-const expo = new Expo(); // Initialize Expo SDK
-const subscriptions = new Map(); // Map<train_id, Set<push_token>>
-
-// Helper function to get the largest time stop
 function getLargestTimeStop(entity) {
   let largestTimeStop = null;
   let largestTime = -Infinity;
@@ -41,7 +29,6 @@ function getLargestTimeStop(entity) {
   return largestTimeStop;
 }
 
-// Helper function to format train data
 async function FormatData(entityData) {
   try {
     if (!entityData) {
@@ -53,8 +40,7 @@ async function FormatData(entityData) {
     // Format the data for the TrainCard component
     const formattedTrainData = largestStops.map(stop => ({
       trip_id: `${stop.trip_id}`,
-      delay: stop.delay,
-      delay_formatted: isNaN(stop.delay) || stop.delay < 30 ? 'On Time' : `${Math.round(stop.delay / 60)} min delay`,
+      delay: isNaN(stop.delay) || stop.delay < 30 ? 'On Time' : `${Math.round(stop.delay / 60)} min delay`,
     }));
 
     return formattedTrainData;
@@ -62,6 +48,13 @@ async function FormatData(entityData) {
     console.error('Error fetching or processing data:', error);
   }
 }
+
+const app = express();
+app.use(express.json());
+app.use(require('cors')());
+
+const DATA_DIR = path.join(__dirname, 'data');
+fs.ensureDirSync(DATA_DIR); // Ensure the data directory exists
 
 // Load JSON data helper
 const loadData = async (filename) => {
@@ -150,7 +143,7 @@ const fetchAndProcessDailyData = async () => {
         const stop = dailyData.stops.find(s => s.stop_id === st.stop_id);
         return { ...st, ...stop };
       });
-
+  
       // Get the first and last stop times
       const start_time = stops.length > 0 ? stops[0].departure_time : null; // Take departure_time from first stop
       const end_time = stops.length > 0 ? stops[stops.length - 1].arrival_time : null; // Take arrival_time from last stop
@@ -158,6 +151,7 @@ const fetchAndProcessDailyData = async () => {
       // Format the short versions of the times
       const start_time_short = formatTimeShort(start_time);
       const end_time_short = formatTimeShort(end_time);
+
 
       const calendarDates = dailyData.calendar_dates.filter(cd => cd.service_id === trip.service_id);
       const calendar = dailyData.calendar.find(c => c.service_id === trip.service_id);
@@ -167,10 +161,10 @@ const fetchAndProcessDailyData = async () => {
         ...trip,
         ...calendar,
         ...route,
-        start_time,
-        start_time_short,
-        end_time,
-        end_time_short,
+	start_time,
+	start_time_short,
+	end_time,
+	end_time_short,
         service_exceptions: calendarDates,
         stops,
       };
@@ -251,8 +245,9 @@ setInterval(async () => {
 }, 60 * 1000); // Fetch every 60 seconds
 
 // Schedule daily task (run at midnight or at a specific time each day)
-const dailyTaskInterval =  60 * 1000; // Every hour
+const dailyTaskInterval =  60 * 1000; // Every hour 
 setInterval(fetchAndProcessDailyData, dailyTaskInterval); // Set the daily interval
+
 
 // Route to serve stored train data
 app.get('/trains', async (req, res) => {
@@ -262,11 +257,6 @@ app.get('/trains', async (req, res) => {
     const trainData = await loadData('trains.json'); // Array of objects
 
     const correctTrainData = Array.isArray(trainData) ? trainData : [];  // Default to empty array if not an array
-
-    // Get the current day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
-    const currentDayOfWeek = new Date().getDay();
-    const weekdayFields = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-    const currentWeekdayField = weekdayFields[currentDayOfWeek];
 
     // Perform a left join on trip_id
     const joinedData = dailyData.map(trip => {
@@ -278,24 +268,9 @@ app.get('/trains', async (req, res) => {
 
       // Add completion_percent calculation
       if (combinedTrip.start_time && combinedTrip.end_time && combinedTrip.delay !== undefined) {
-        // Helper function to convert "HH:MM:SS" to timestamp (milliseconds since Unix epoch)
-        const timeToTimestamp = (time) => {
-          const [hours, minutes, seconds] = time.split(':').map(Number);
-          const date = new Date();
-          date.setHours(hours, minutes, seconds, 0); // Set time to today's date
-          return date.getTime(); // Get timestamp in milliseconds
-        };
-
-        // Convert start_time and end_time to timestamps
-        const startTime = timeToTimestamp(combinedTrip.start_time);
-        const endTime = timeToTimestamp(combinedTrip.end_time);
-
-        // Get current time in milliseconds
-        const currentTime = Date.now();
-
-        // Adjust start and end times with delay (convert delay to milliseconds)
-        const adjustedStartTime = startTime + combinedTrip.delay * 1000;
-        const adjustedEndTime = endTime + combinedTrip.delay * 1000;
+        const currentTime = new Date();
+        const adjustedStartTime = new Date(combinedTrip.start_time).getTime() + combinedTrip.delay * 1000; // Delay in seconds
+        const adjustedEndTime = new Date(combinedTrip.end_time).getTime() + combinedTrip.delay * 1000;
 
         // Calculate completion percentage
         let completionPercent = 0;
@@ -312,31 +287,15 @@ app.get('/trains', async (req, res) => {
         completionPercent = Math.max(0, Math.min(100, completionPercent));
 
         // Attach completion_percent to the trip object
-        combinedTrip.completionPercentage = completionPercent;
-      }	
+        combinedTrip.completion_percent = completionPercent;
+      }
       return combinedTrip;
     });
 
 
-    // Filter the joinedData array
-    const filteredData = joinedData.filter(trip => {
-      const currentTime = new Date();
-      const startTime = new Date(trip.start_time);
+    console.log(JSON.stringify(joinedData[0], null, 2));
 
-      // Check if the trip operates on the current day of the week
-      const operatesToday = trip[currentWeekdayField] === '1';
-
-      // Check if delay is non-NaN or start_time is within 2 hours from now
-      return (
-        (trip.delay !== undefined || // Non-NaN delay
-        (startTime - currentTime) <= 2 * 60 * 60 * 1000) && // Start time within 2 hours
-        operatesToday // Trip operates on the current day
-      );
-    });
-
-    console.log(JSON.stringify(filteredData[0], null, 2));
-
-    res.json(filteredData); // Send the filtered data as JSON response
+    res.json(joinedData); // Send the joined data as JSON response
   } catch (error) {
     console.error('Error loading or joining train data:', error);
     res.status(500).json({ error: error.message });
@@ -344,91 +303,6 @@ app.get('/trains', async (req, res) => {
 });
 
 
-// Route to subscribe to push notifications for a specific train
-app.post('/subscribe', (req, res) => {
-  const { train_id, push_token } = req.body;
-
-  if (!train_id || !push_token) {
-    return res.status(400).json({ error: 'Missing train_id or push_token' });
-  }
-
-  if (!Expo.isExpoPushToken(push_token)) {
-    return res.status(400).json({ error: 'Invalid push token' });
-  }
-
-  // Add the push token to the train's subscription list
-  if (!subscriptions.has(train_id)) {
-    subscriptions.set(train_id, new Set());
-  }
-  subscriptions.get(train_id).add(push_token);
-
-  res.json({ success: true });
-});
-
-// Route to unsubscribe from push notifications for a specific train
-app.post('/unsubscribe', (req, res) => {
-  const { train_id, push_token } = req.body;
-
-  if (!train_id || !push_token) {
-    return res.status(400).json({ error: 'Missing train_id or push_token' });
-  }
-
-  if (subscriptions.has(train_id)) {
-    subscriptions.get(train_id).delete(push_token);
-  }
-
-  res.json({ success: true });
-});
-
-// Function to send push notifications
-async function sendPushNotification(train) {
-  const messages = [];
-  const pushTokens = subscriptions.get(train.trip_id) || [];
-
-  for (const token of pushTokens) {
-    if (!Expo.isExpoPushToken(token)) {
-      console.error(`Invalid push token: ${token}`);
-      continue;
-    }
-
-    messages.push({
-      to: token,
-      sound: 'default',
-      title: 'Train Delay Alert',
-      body: `Train ${train.trip_id} is delayed by ${train.delay} minutes.`,
-    });
-  }
-
-  const chunks = expo.chunkPushNotifications(messages);
-
-  for (const chunk of chunks) {
-    try {
-      const receipts = await expo.sendPushNotificationsAsync(chunk);
-      console.log('Push notifications sent:', receipts);
-    } catch (error) {
-      console.error('Error sending push notifications:', error);
-    }
-  }
-}
-
-// Function to check for delays and send notifications
-async function checkForDelays() {
-  try {
-    const trains = await fetchAndDecodeGTFSRT();
-
-    for (const train of trains) {
-      if (train.delay >= 5) {
-        await sendPushNotification(train);
-      }
-    }
-  } catch (error) {
-    console.error('Error checking for delays:', error);
-  }
-}
-
-// Periodically check for delays
-setInterval(checkForDelays, 60 * 1000); // Check every minute
-
-// Start the server
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+

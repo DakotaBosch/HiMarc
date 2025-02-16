@@ -28,7 +28,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:40:00",
+    "start_time_short": "5:40 AM",
     "end_time": "06:43:00",
+    "end_time_short": "6:43 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -128,6 +130,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -347,7 +359,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": null,
+    "start_time_short": null,
     "end_time": null,
+    "end_time_short": null,
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -447,6 +461,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -481,7 +505,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "04:55:00",
+    "start_time_short": "4:55 AM",
     "end_time": "05:58:00",
+    "end_time_short": "5:58 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -581,6 +607,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -823,7 +859,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:43:00",
+    "start_time_short": "6:43 AM",
     "end_time": "07:36:00",
+    "end_time_short": "7:36 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -923,6 +961,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -1073,7 +1121,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:40:00",
+    "start_time_short": "5:40 AM",
     "end_time": "06:41:00",
+    "end_time_short": "6:41 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -1173,6 +1223,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -1415,7 +1475,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:00:00",
+    "start_time_short": "7:00 AM",
     "end_time": "07:44:00",
+    "end_time_short": "7:44 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -1515,6 +1577,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -1596,7 +1668,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:30:00",
+    "start_time_short": "6:30 AM",
     "end_time": "07:38:00",
+    "end_time_short": "7:38 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -1696,6 +1770,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -1915,7 +1999,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:15:00",
+    "start_time_short": "7:15 AM",
     "end_time": "08:17:00",
+    "end_time_short": "8:17 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -2015,6 +2101,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -2257,7 +2353,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:55:00",
+    "start_time_short": "8:55 AM",
     "end_time": "09:51:00",
+    "end_time_short": "9:51 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -2357,6 +2455,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -2553,7 +2661,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:45:00",
+    "start_time_short": "6:45 AM",
     "end_time": "07:48:00",
+    "end_time_short": "7:48 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -2653,6 +2763,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -2895,7 +3015,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "09:45:00",
+    "start_time_short": "9:45 AM",
     "end_time": "10:43:00",
+    "end_time_short": "10:43 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -2995,6 +3117,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -3191,7 +3323,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:00:00",
+    "start_time_short": "7:00 AM",
     "end_time": "08:02:00",
+    "end_time_short": "8:02 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -3291,6 +3425,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -3533,7 +3677,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "10:10:00",
+    "start_time_short": "10:10 AM",
     "end_time": "11:13:00",
+    "end_time_short": "11:13 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -3633,6 +3779,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -3875,7 +4031,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "11:15:00",
+    "start_time_short": "11:15 AM",
     "end_time": "12:17:00",
+    "end_time_short": "12:17 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -3975,6 +4133,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -4217,7 +4385,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:53:00",
+    "start_time_short": "7:53 AM",
     "end_time": "08:56:00",
+    "end_time_short": "8:56 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -4317,6 +4487,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -4559,7 +4739,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:15:00",
+    "start_time_short": "8:15 AM",
     "end_time": "09:17:00",
+    "end_time_short": "9:17 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -4659,6 +4841,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -4901,7 +5093,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "13:10:00",
+    "start_time_short": "1:10 PM",
     "end_time": "14:19:00",
+    "end_time_short": "2:19 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -5001,6 +5195,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -5243,7 +5447,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:55:00",
+    "start_time_short": "8:55 AM",
     "end_time": "09:58:00",
+    "end_time_short": "9:58 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -5343,6 +5549,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -5585,7 +5801,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:15:00",
+    "start_time_short": "2:15 PM",
     "end_time": "15:17:00",
+    "end_time_short": "3:17 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -5685,6 +5903,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -5927,7 +6155,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:00:00",
+    "start_time_short": "3:00 PM",
     "end_time": "16:08:00",
+    "end_time_short": "4:08 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -6027,6 +6257,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -6269,7 +6509,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "10:25:00",
+    "start_time_short": "10:25 AM",
     "end_time": "11:25:00",
+    "end_time_short": "11:25 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -6369,6 +6611,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -6611,7 +6863,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:45:00",
+    "start_time_short": "3:45 PM",
     "end_time": "16:40:00",
+    "end_time_short": "4:40 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -6711,6 +6965,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -6907,7 +7171,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "11:35:00",
+    "start_time_short": "11:35 AM",
     "end_time": "12:35:00",
+    "end_time_short": "12:35 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -7007,6 +7273,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -7249,7 +7525,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:30:00",
+    "start_time_short": "4:30 PM",
     "end_time": "17:29:00",
+    "end_time_short": "5:29 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -7349,6 +7627,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -7545,7 +7833,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:30:00",
+    "start_time_short": "4:30 PM",
     "end_time": "18:25:00",
+    "end_time_short": "6:25 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -7605,6 +7895,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -7680,10 +7980,33 @@
       },
       {
         "trip_id": "Train430R",
+        "arrival_time": "16:58:00",
+        "departure_time": "16:58:00",
+        "stop_id": "11992",
+        "stop_sequence": "3",
+        "stop_headsign": "",
+        "pickup_type": "",
+        "drop_off_type": "",
+        "shape_dist_traveled": "35.7",
+        "timepoint": "1",
+        "stop_code": "11992",
+        "stop_name": "ODENTON MARC nb",
+        "stop_desc": "",
+        "stop_lat": "39.086794",
+        "stop_lon": "-76.706383",
+        "zone_id": "",
+        "stop_url": "",
+        "location_type": "",
+        "parent_station": "",
+        "stop_timezone": "",
+        "wheelchair_boarding": "0"
+      },
+      {
+        "trip_id": "Train430R",
         "arrival_time": "17:06:00",
         "departure_time": "17:06:00",
         "stop_id": "11993",
-        "stop_sequence": "3",
+        "stop_sequence": "4",
         "stop_headsign": "",
         "pickup_type": "",
         "drop_off_type": "",
@@ -7706,7 +8029,7 @@
         "arrival_time": "17:12:00",
         "departure_time": "17:12:00",
         "stop_id": "11994",
-        "stop_sequence": "4",
+        "stop_sequence": "5",
         "stop_headsign": "",
         "pickup_type": "",
         "drop_off_type": "",
@@ -7729,7 +8052,7 @@
         "arrival_time": "17:19:00",
         "departure_time": "17:19:00",
         "stop_id": "11995",
-        "stop_sequence": "5",
+        "stop_sequence": "6",
         "stop_headsign": "",
         "pickup_type": "",
         "drop_off_type": "",
@@ -7752,7 +8075,7 @@
         "arrival_time": "17:29:00",
         "departure_time": "17:29:00",
         "stop_id": "12002",
-        "stop_sequence": "6",
+        "stop_sequence": "7",
         "stop_headsign": "",
         "pickup_type": "",
         "drop_off_type": "",
@@ -7775,7 +8098,7 @@
         "arrival_time": "17:41:00",
         "departure_time": "17:41:00",
         "stop_id": "12003",
-        "stop_sequence": "7",
+        "stop_sequence": "8",
         "stop_headsign": "",
         "pickup_type": "",
         "drop_off_type": "",
@@ -7798,7 +8121,7 @@
         "arrival_time": "18:00:00",
         "departure_time": "18:00:00",
         "stop_id": "12004",
-        "stop_sequence": "8",
+        "stop_sequence": "9",
         "stop_headsign": "",
         "pickup_type": "",
         "drop_off_type": "",
@@ -7821,7 +8144,7 @@
         "arrival_time": "18:10:00",
         "departure_time": "18:10:00",
         "stop_id": "12005",
-        "stop_sequence": "9",
+        "stop_sequence": "10",
         "stop_headsign": "",
         "pickup_type": "",
         "drop_off_type": "",
@@ -7844,7 +8167,7 @@
         "arrival_time": "18:25:00",
         "departure_time": "18:25:00",
         "stop_id": "11976",
-        "stop_sequence": "10",
+        "stop_sequence": "11",
         "stop_headsign": "",
         "pickup_type": "",
         "drop_off_type": "",
@@ -7893,7 +8216,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "12:35:00",
+    "start_time_short": "12:35 PM",
     "end_time": "13:35:00",
+    "end_time_short": "1:35 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -7993,6 +8318,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -8235,7 +8570,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "13:35:00",
+    "start_time_short": "1:35 PM",
     "end_time": "14:31:00",
+    "end_time_short": "2:31 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -8335,6 +8672,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -8554,7 +8901,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:45:00",
+    "start_time_short": "2:45 PM",
     "end_time": "15:43:00",
+    "end_time_short": "3:43 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -8654,6 +9003,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -8873,7 +9232,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:27:00",
+    "start_time_short": "5:27 PM",
     "end_time": "18:25:00",
+    "end_time_short": "6:25 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -8973,6 +9334,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -9123,7 +9494,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:45:00",
+    "start_time_short": "3:45 PM",
     "end_time": "16:45:00",
+    "end_time_short": "4:45 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -9223,6 +9596,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -9465,7 +9848,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:35:00",
+    "start_time_short": "5:35 PM",
     "end_time": "18:42:00",
+    "end_time_short": "6:42 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -9565,6 +9950,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -9807,7 +10202,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:35:00",
+    "start_time_short": "5:35 PM",
     "end_time": "19:35:00",
+    "end_time_short": "7:35 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -9867,6 +10264,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -10201,7 +10608,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:52:00",
+    "start_time_short": "4:52 PM",
     "end_time": "17:51:00",
+    "end_time_short": "5:51 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -10301,6 +10710,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -10497,7 +10916,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:30:00",
+    "start_time_short": "5:30 PM",
     "end_time": "18:35:00",
+    "end_time_short": "6:35 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -10597,6 +11018,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -10839,7 +11270,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "19:15:00",
+    "start_time_short": "7:15 PM",
     "end_time": "20:21:00",
+    "end_time_short": "8:21 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -10939,6 +11372,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -11181,7 +11624,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:10:00",
+    "start_time_short": "6:10 PM",
     "end_time": "19:00:00",
+    "end_time_short": "7:00 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -11281,6 +11726,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -11408,7 +11863,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "20:05:00",
+    "start_time_short": "8:05 PM",
     "end_time": "21:07:00",
+    "end_time_short": "9:07 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -11508,6 +11965,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -11750,7 +12217,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:40:00",
+    "start_time_short": "6:40 PM",
     "end_time": "19:33:00",
+    "end_time_short": "7:33 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -11850,6 +12319,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -12023,7 +12502,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "19:35:00",
+    "start_time_short": "7:35 PM",
     "end_time": "20:25:00",
+    "end_time_short": "8:25 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -12123,6 +12604,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -12296,7 +12787,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "22:55:00",
+    "start_time_short": "10:55 PM",
     "end_time": "23:56:00",
+    "end_time_short": "11:56 PM",
     "service_exceptions": [
       {
         "service_id": "101PF",
@@ -12548,7 +13041,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "21:35:00",
+    "start_time_short": "9:35 PM",
     "end_time": "22:35:00",
+    "end_time_short": "10:35 PM",
     "service_exceptions": [
       {
         "service_id": "101PF",
@@ -12800,7 +13295,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "22:05:00",
+    "start_time_short": "10:05 PM",
     "end_time": "23:05:00",
+    "end_time_short": "11:05 PM",
     "service_exceptions": [
       {
         "service_id": "101PMT",
@@ -13082,7 +13579,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "20:45:00",
+    "start_time_short": "8:45 PM",
     "end_time": "21:45:00",
+    "end_time_short": "9:45 PM",
     "service_exceptions": [
       {
         "service_id": "101PMT",
@@ -13364,7 +13863,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:55:00",
+    "start_time_short": "8:55 AM",
     "end_time": "09:53:00",
+    "end_time_short": "9:53 AM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -13593,7 +14094,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "10:25:00",
+    "start_time_short": "10:25 AM",
     "end_time": "11:24:00",
+    "end_time_short": "11:24 AM",
     "service_exceptions": [],
     "stops": [
       {
@@ -13811,7 +14314,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "11:00:00",
+    "start_time_short": "11:00 AM",
     "end_time": "12:03:00",
+    "end_time_short": "12:03 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -14029,7 +14534,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "11:05:00",
+    "start_time_short": "11:05 AM",
     "end_time": "12:09:00",
+    "end_time_short": "12:09 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -14258,7 +14765,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "11:00:00",
+    "start_time_short": "11:00 AM",
     "end_time": "12:02:00",
+    "end_time_short": "12:02 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -14487,7 +14996,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "12:40:00",
+    "start_time_short": "12:40 PM",
     "end_time": "13:39:00",
+    "end_time_short": "1:39 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -14716,7 +15227,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "12:40:00",
+    "start_time_short": "12:40 PM",
     "end_time": "13:39:00",
+    "end_time_short": "1:39 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -14934,7 +15447,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "12:30:00",
+    "start_time_short": "12:30 PM",
     "end_time": "13:30:00",
+    "end_time_short": "1:30 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -15152,7 +15667,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:05:00",
+    "start_time_short": "2:05 PM",
     "end_time": "15:11:00",
+    "end_time_short": "3:11 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -15370,7 +15887,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:35:00",
+    "start_time_short": "2:35 PM",
     "end_time": "15:40:00",
+    "end_time_short": "3:40 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -15588,7 +16107,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:05:00",
+    "start_time_short": "2:05 PM",
     "end_time": "15:06:00",
+    "end_time_short": "3:06 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -15817,7 +16338,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:05:00",
+    "start_time_short": "2:05 PM",
     "end_time": "15:06:00",
+    "end_time_short": "3:06 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -16035,7 +16558,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:28:00",
+    "start_time_short": "4:28 PM",
     "end_time": "17:28:00",
+    "end_time_short": "5:28 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -16264,7 +16789,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:28:00",
+    "start_time_short": "4:28 PM",
     "end_time": "17:28:00",
+    "end_time_short": "5:28 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -16482,7 +17009,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:05:00",
+    "start_time_short": "4:05 PM",
     "end_time": "17:05:00",
+    "end_time_short": "5:05 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -16711,7 +17240,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:05:00",
+    "start_time_short": "4:05 PM",
     "end_time": "17:05:00",
+    "end_time_short": "5:05 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -16929,7 +17460,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:28:00",
+    "start_time_short": "5:28 PM",
     "end_time": "18:28:00",
+    "end_time_short": "6:28 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -17158,7 +17691,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:28:00",
+    "start_time_short": "5:28 PM",
     "end_time": "18:54:00",
+    "end_time_short": "6:54 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -17399,7 +17934,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "19:25:00",
+    "start_time_short": "7:25 PM",
     "end_time": "20:31:00",
+    "end_time_short": "8:31 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -17628,7 +18165,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:00:00",
+    "start_time_short": "6:00 PM",
     "end_time": "19:05:00",
+    "end_time_short": "7:05 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -17857,7 +18396,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:00:00",
+    "start_time_short": "6:00 PM",
     "end_time": "19:05:00",
+    "end_time_short": "7:05 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -18075,7 +18616,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "19:30:00",
+    "start_time_short": "7:30 PM",
     "end_time": "20:30:00",
+    "end_time_short": "8:30 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -18304,7 +18847,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "21:25:00",
+    "start_time_short": "9:25 PM",
     "end_time": "22:25:00",
+    "end_time_short": "10:25 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -18533,7 +19078,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:12:00",
+    "start_time_short": "6:12 AM",
     "end_time": "08:18:00",
+    "end_time_short": "8:18 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -18633,6 +19180,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -18967,7 +19524,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "04:25:00",
+    "start_time_short": "4:25 AM",
     "end_time": "06:15:00",
+    "end_time_short": "6:15 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -19067,6 +19626,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -19378,7 +19947,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:15:00",
+    "start_time_short": "5:15 AM",
     "end_time": "07:03:00",
+    "end_time_short": "7:03 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -19478,6 +20049,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -19743,7 +20324,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:30:00",
+    "start_time_short": "6:30 AM",
     "end_time": "08:19:00",
+    "end_time_short": "8:19 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -19843,6 +20426,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -20131,7 +20724,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "12:15:00",
+    "start_time_short": "12:15 PM",
     "end_time": "14:07:00",
+    "end_time_short": "2:07 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -20231,6 +20826,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -20565,7 +21170,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:45:00",
+    "start_time_short": "8:45 AM",
     "end_time": "10:28:00",
+    "end_time_short": "10:28 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -20665,6 +21272,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -20976,7 +21593,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:10:00",
+    "start_time_short": "4:10 PM",
     "end_time": "17:53:00",
+    "end_time_short": "5:53 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -21076,6 +21695,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -21295,7 +21924,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:18:00",
+    "start_time_short": "5:18 PM",
     "end_time": "19:02:00",
+    "end_time_short": "7:02 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -21395,6 +22026,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -21591,7 +22232,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:40:00",
+    "start_time_short": "2:40 PM",
     "end_time": "16:22:00",
+    "end_time_short": "4:22 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -21691,6 +22334,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -21910,7 +22563,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:27:00",
+    "start_time_short": "6:27 PM",
     "end_time": "20:31:00",
+    "end_time_short": "8:31 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -22010,6 +22665,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -22344,7 +23009,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "21:10:00",
+    "start_time_short": "9:10 PM",
     "end_time": "22:58:00",
+    "end_time_short": "10:58 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -22444,6 +23111,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -22778,7 +23455,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:25:00",
+    "start_time_short": "5:25 AM",
     "end_time": "06:08:00",
+    "end_time_short": "6:08 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -22878,6 +23557,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -23005,7 +23694,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:30:00",
+    "start_time_short": "6:30 PM",
     "end_time": "19:18:00",
+    "end_time_short": "7:18 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -23105,6 +23796,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -23255,7 +23956,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:50:00",
+    "start_time_short": "7:50 AM",
     "end_time": "09:26:00",
+    "end_time_short": "9:26 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -23355,6 +24058,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -23528,7 +24241,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:20:00",
+    "start_time_short": "8:20 AM",
     "end_time": "09:46:00",
+    "end_time_short": "9:46 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -23628,6 +24343,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -23893,7 +24618,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:30:00",
+    "start_time_short": "5:30 AM",
     "end_time": "05:46:00",
+    "end_time_short": "5:46 AM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -23993,6 +24720,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -24074,7 +24811,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:45:00",
+    "start_time_short": "4:45 PM",
     "end_time": "17:58:00",
+    "end_time_short": "5:58 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -24174,6 +24913,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -24347,7 +25096,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:35:00",
+    "start_time_short": "3:35 PM",
     "end_time": "17:01:00",
+    "end_time_short": "5:01 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -24447,6 +25198,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -24643,7 +25404,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:00:00",
+    "start_time_short": "6:00 PM",
     "end_time": "19:31:00",
+    "end_time_short": "7:31 PM",
     "service_exceptions": [
       {
         "service_id": "101P",
@@ -24743,6 +25506,16 @@
       {
         "service_id": "101P",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101P",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -25008,7 +25781,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:10:00",
+    "start_time_short": "7:10 AM",
     "end_time": "08:35:00",
+    "end_time_short": "8:35 AM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -25260,7 +26035,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:30:00",
+    "start_time_short": "8:30 AM",
     "end_time": "09:55:00",
+    "end_time_short": "9:55 AM",
     "service_exceptions": [],
     "stops": [
       {
@@ -25501,7 +26278,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "10:30:00",
+    "start_time_short": "10:30 AM",
     "end_time": "12:02:00",
+    "end_time_short": "12:02 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -25742,7 +26521,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "09:05:00",
+    "start_time_short": "9:05 AM",
     "end_time": "10:30:00",
+    "end_time_short": "10:30 AM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -25994,7 +26775,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:30:00",
+    "start_time_short": "3:30 PM",
     "end_time": "17:02:00",
+    "end_time_short": "5:02 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -26246,7 +27029,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:37:00",
+    "start_time_short": "2:37 PM",
     "end_time": "16:01:00",
+    "end_time_short": "4:01 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -26498,7 +27283,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "19:25:00",
+    "start_time_short": "7:25 PM",
     "end_time": "20:57:00",
+    "end_time_short": "8:57 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -26739,7 +27526,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "21:30:00",
+    "start_time_short": "9:30 PM",
     "end_time": "23:02:00",
+    "end_time_short": "11:02 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -26991,7 +27780,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "22:55:00",
+    "start_time_short": "10:55 PM",
     "end_time": "24:22:00",
+    "end_time_short": "12:22 PM",
     "service_exceptions": [
       {
         "service_id": "102",
@@ -27243,7 +28034,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:32:00",
+    "start_time_short": "6:32 AM",
     "end_time": "07:43:00",
+    "end_time_short": "7:43 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -27343,6 +28136,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -27585,7 +28388,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:00:00",
+    "start_time_short": "5:00 AM",
     "end_time": "06:05:00",
+    "end_time_short": "6:05 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -27685,6 +28490,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -27950,7 +28765,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:00:00",
+    "start_time_short": "7:00 AM",
     "end_time": "08:12:00",
+    "end_time_short": "8:12 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -28050,6 +28867,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -28292,7 +29119,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:30:00",
+    "start_time_short": "5:30 AM",
     "end_time": "06:29:00",
+    "end_time_short": "6:29 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -28392,6 +29221,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -28565,7 +29404,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:40:00",
+    "start_time_short": "7:40 AM",
     "end_time": "08:48:00",
+    "end_time_short": "8:48 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -28665,6 +29506,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -28907,7 +29758,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:10:00",
+    "start_time_short": "6:10 AM",
     "end_time": "07:18:00",
+    "end_time_short": "7:18 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -29007,6 +29860,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -29249,7 +30112,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:00:00",
+    "start_time_short": "8:00 AM",
     "end_time": "09:08:00",
+    "end_time_short": "9:08 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -29349,6 +30214,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -29591,7 +30466,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:30:00",
+    "start_time_short": "6:30 AM",
     "end_time": "07:44:00",
+    "end_time_short": "7:44 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -29691,6 +30568,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -29979,7 +30866,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:30:00",
+    "start_time_short": "3:30 PM",
     "end_time": "16:20:00",
+    "end_time_short": "4:20 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -30079,6 +30968,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -30298,7 +31197,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:10:00",
+    "start_time_short": "7:10 AM",
     "end_time": "08:21:00",
+    "end_time_short": "8:21 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -30398,6 +31299,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -30594,7 +31505,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:13:00",
+    "start_time_short": "4:13 PM",
     "end_time": "17:25:00",
+    "end_time_short": "5:25 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -30694,6 +31607,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -30890,7 +31813,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:05:00",
+    "start_time_short": "8:05 AM",
     "end_time": "09:12:00",
+    "end_time_short": "9:12 AM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -30990,6 +31915,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -31255,7 +32190,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:43:00",
+    "start_time_short": "4:43 PM",
     "end_time": "18:00:00",
+    "end_time_short": "6:00 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -31355,6 +32292,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -31620,7 +32567,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:40:00",
+    "start_time_short": "3:40 PM",
     "end_time": "16:50:00",
+    "end_time_short": "4:50 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -31720,6 +32669,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -31985,7 +32944,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:22:00",
+    "start_time_short": "5:22 PM",
     "end_time": "18:41:00",
+    "end_time_short": "6:41 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -32085,6 +33046,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -32373,7 +33344,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:45:00",
+    "start_time_short": "4:45 PM",
     "end_time": "17:35:00",
+    "end_time_short": "5:35 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -32473,6 +33446,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -32646,7 +33629,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:58:00",
+    "start_time_short": "5:58 PM",
     "end_time": "19:13:00",
+    "end_time_short": "7:13 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -32746,6 +33731,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -32942,7 +33937,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:20:00",
+    "start_time_short": "5:20 PM",
     "end_time": "18:28:00",
+    "end_time_short": "6:28 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -33042,6 +34039,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -33307,7 +34314,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:55:00",
+    "start_time_short": "6:55 PM",
     "end_time": "20:03:00",
+    "end_time_short": "8:03 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -33407,6 +34416,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -33672,7 +34691,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:15:00",
+    "start_time_short": "6:15 PM",
     "end_time": "19:23:00",
+    "end_time_short": "7:23 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -33772,6 +34793,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -34037,7 +35068,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "19:45:00",
+    "start_time_short": "7:45 PM",
     "end_time": "20:55:00",
+    "end_time_short": "8:55 PM",
     "service_exceptions": [
       {
         "service_id": "101C",
@@ -34137,6 +35170,16 @@
       {
         "service_id": "101C",
         "date": "20250107",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101C",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -34379,7 +35422,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "04:50:00",
+    "start_time_short": "4:50 AM",
     "end_time": "06:23:00",
+    "end_time_short": "6:23 AM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -34484,6 +35529,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -34818,7 +35873,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "13:30:00",
+    "start_time_short": "1:30 PM",
     "end_time": "15:04:00",
+    "end_time_short": "3:04 PM",
     "service_exceptions": [
       {
         "service_id": "104",
@@ -35180,7 +36237,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:00:00",
+    "start_time_short": "5:00 AM",
     "end_time": "07:09:00",
+    "end_time_short": "7:09 AM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -35285,6 +36344,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -35642,7 +36711,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:30:00",
+    "start_time_short": "3:30 PM",
     "end_time": "16:51:00",
+    "end_time_short": "4:51 PM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -35747,6 +36818,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -36012,7 +37093,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:25:00",
+    "start_time_short": "5:25 AM",
     "end_time": "07:35:00",
+    "end_time_short": "7:35 AM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -36117,6 +37200,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -36451,7 +37544,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:25:00",
+    "start_time_short": "4:25 PM",
     "end_time": "18:39:00",
+    "end_time_short": "6:39 PM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -36556,6 +37651,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -36890,7 +37995,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:40:00",
+    "start_time_short": "6:40 AM",
     "end_time": "08:15:00",
+    "end_time_short": "8:15 AM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -36995,6 +38102,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -37306,7 +38423,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:40:00",
+    "start_time_short": "6:40 AM",
     "end_time": "08:15:00",
+    "end_time_short": "8:15 AM",
     "service_exceptions": [
       {
         "service_id": "Bruns25Special",
@@ -37622,7 +38741,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:55:00",
+    "start_time_short": "4:55 PM",
     "end_time": "18:28:00",
+    "end_time_short": "6:28 PM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -37727,6 +38848,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -38084,7 +39215,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:25:00",
+    "start_time_short": "6:25 AM",
     "end_time": "08:32:00",
+    "end_time_short": "8:32 AM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -38189,6 +39322,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -38569,7 +39712,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:40:00",
+    "start_time_short": "5:40 PM",
     "end_time": "19:50:00",
+    "end_time_short": "7:50 PM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -38674,6 +39819,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -39100,7 +40255,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:45:00",
+    "start_time_short": "7:45 AM",
     "end_time": "09:21:00",
+    "end_time_short": "9:21 AM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -39205,6 +40362,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -39562,7 +40729,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:20:00",
+    "start_time_short": "6:20 PM",
     "end_time": "20:25:00",
+    "end_time_short": "8:25 PM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -39667,6 +40836,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -40024,7 +41203,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "19:25:00",
+    "start_time_short": "7:25 PM",
     "end_time": "20:47:00",
+    "end_time_short": "8:47 PM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -40129,6 +41310,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -40486,7 +41677,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "19:25:00",
+    "start_time_short": "7:25 PM",
     "end_time": "20:47:00",
+    "end_time_short": "8:47 PM",
     "service_exceptions": [
       {
         "service_id": "Bruns25Special",
@@ -40848,7 +42041,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:00:00",
+    "start_time_short": "5:00 AM",
     "end_time": "06:40:00",
+    "end_time_short": "6:40 AM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -40953,6 +42148,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -41241,7 +42446,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:45:00",
+    "start_time_short": "3:45 PM",
     "end_time": "17:29:00",
+    "end_time_short": "5:29 PM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -41346,6 +42553,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -41657,7 +42874,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:05:00",
+    "start_time_short": "6:05 AM",
     "end_time": "07:56:00",
+    "end_time_short": "7:56 AM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -41762,6 +42981,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -42073,7 +43302,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:20:00",
+    "start_time_short": "5:20 PM",
     "end_time": "18:59:00",
+    "end_time_short": "6:59 PM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -42178,6 +43409,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -42443,7 +43684,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:10:00",
+    "start_time_short": "7:10 AM",
     "end_time": "08:52:00",
+    "end_time_short": "8:52 AM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -42548,6 +43791,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -42813,7 +44066,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:40:00",
+    "start_time_short": "6:40 PM",
     "end_time": "20:21:00",
+    "end_time_short": "8:21 PM",
     "service_exceptions": [
       {
         "service_id": "101B",
@@ -42918,6 +44173,16 @@
       {
         "service_id": "101B",
         "date": "20250206",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250212",
+        "exception_type": "2"
+      },
+      {
+        "service_id": "101B",
+        "date": "20250217",
         "exception_type": "2"
       }
     ],
@@ -43275,7 +44540,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:05:00",
+    "start_time_short": "6:05 AM",
     "end_time": "07:56:00",
+    "end_time_short": "7:56 AM",
     "service_exceptions": [
       {
         "service_id": "101BrunswickR",
@@ -43340,6 +44607,16 @@
       {
         "service_id": "101BrunswickR",
         "date": "20250206",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -43697,7 +44974,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:25:00",
+    "start_time_short": "6:25 AM",
     "end_time": "08:32:00",
+    "end_time_short": "8:32 AM",
     "service_exceptions": [
       {
         "service_id": "101BrunswickR",
@@ -43762,6 +45041,16 @@
       {
         "service_id": "101BrunswickR",
         "date": "20250206",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -44188,7 +45477,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:45:00",
+    "start_time_short": "7:45 AM",
     "end_time": "09:21:00",
+    "end_time_short": "9:21 AM",
     "service_exceptions": [
       {
         "service_id": "101BrunswickR",
@@ -44253,6 +45544,16 @@
       {
         "service_id": "101BrunswickR",
         "date": "20250206",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -44610,7 +45911,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:25:00",
+    "start_time_short": "4:25 PM",
     "end_time": "17:38:00",
+    "end_time_short": "5:38 PM",
     "service_exceptions": [
       {
         "service_id": "101BrunswickR",
@@ -44675,6 +45978,16 @@
       {
         "service_id": "101BrunswickR",
         "date": "20250206",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -45032,7 +46345,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:25:00",
+    "start_time_short": "4:25 PM",
     "end_time": "18:39:00",
+    "end_time_short": "6:39 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -45457,7 +46772,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:20:00",
+    "start_time_short": "5:20 PM",
     "end_time": "18:59:00",
+    "end_time_short": "6:59 PM",
     "service_exceptions": [
       {
         "service_id": "101BrunswickR",
@@ -45522,6 +46839,16 @@
       {
         "service_id": "101BrunswickR",
         "date": "20250206",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -45879,7 +47206,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:20:00",
+    "start_time_short": "6:20 PM",
     "end_time": "20:25:00",
+    "end_time_short": "8:25 PM",
     "service_exceptions": [
       {
         "service_id": "101BrunswickR",
@@ -45944,6 +47273,16 @@
       {
         "service_id": "101BrunswickR",
         "date": "20250206",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101BrunswickR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -46370,7 +47709,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:00:00",
+    "start_time_short": "5:00 AM",
     "end_time": "07:09:00",
+    "end_time_short": "7:09 AM",
     "service_exceptions": [],
     "stops": [
       {
@@ -46795,7 +48136,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:55:00",
+    "start_time_short": "4:55 PM",
     "end_time": "18:28:00",
+    "end_time_short": "6:28 PM",
     "service_exceptions": [],
     "stops": [
       {
@@ -47151,7 +48494,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:00:00",
+    "start_time_short": "8:00 AM",
     "end_time": "09:08:00",
+    "end_time_short": "9:08 AM",
     "service_exceptions": [
       {
         "service_id": "101CamdenR",
@@ -47211,6 +48556,16 @@
       {
         "service_id": "101CamdenR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -47453,7 +48808,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:43:00",
+    "start_time_short": "4:43 PM",
     "end_time": "18:00:00",
+    "end_time_short": "6:00 PM",
     "service_exceptions": [
       {
         "service_id": "101CamdenR",
@@ -47513,6 +48870,16 @@
       {
         "service_id": "101CamdenR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -47778,7 +49145,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:58:00",
+    "start_time_short": "5:58 PM",
     "end_time": "19:13:00",
+    "end_time_short": "7:13 PM",
     "service_exceptions": [
       {
         "service_id": "101CamdenR",
@@ -47838,6 +49207,16 @@
       {
         "service_id": "101CamdenR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -48034,7 +49413,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:55:00",
+    "start_time_short": "6:55 PM",
     "end_time": "20:03:00",
+    "end_time_short": "8:03 PM",
     "service_exceptions": [
       {
         "service_id": "101CamdenR",
@@ -48094,6 +49475,16 @@
       {
         "service_id": "101CamdenR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -48359,7 +49750,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "17:20:00",
+    "start_time_short": "5:20 PM",
     "end_time": "18:28:00",
+    "end_time_short": "6:28 PM",
     "service_exceptions": [
       {
         "service_id": "101CamdenR",
@@ -48419,6 +49812,16 @@
       {
         "service_id": "101CamdenR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -48684,7 +50087,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:05:00",
+    "start_time_short": "8:05 AM",
     "end_time": "09:12:00",
+    "end_time_short": "9:12 AM",
     "service_exceptions": [
       {
         "service_id": "101CamdenR",
@@ -48744,6 +50149,16 @@
       {
         "service_id": "101CamdenR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -49009,7 +50424,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:10:00",
+    "start_time_short": "7:10 AM",
     "end_time": "08:21:00",
+    "end_time_short": "8:21 AM",
     "service_exceptions": [
       {
         "service_id": "101CamdenR",
@@ -49069,6 +50486,16 @@
       {
         "service_id": "101CamdenR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -49265,7 +50692,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:10:00",
+    "start_time_short": "6:10 AM",
     "end_time": "07:18:00",
+    "end_time_short": "7:18 AM",
     "service_exceptions": [
       {
         "service_id": "101CamdenR",
@@ -49325,6 +50754,16 @@
       {
         "service_id": "101CamdenR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101CamdenR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -49567,7 +51006,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "07:15:00",
+    "start_time_short": "7:15 AM",
     "end_time": "08:17:00",
+    "end_time_short": "8:17 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -49627,6 +51068,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -49869,7 +51320,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:20:00",
+    "start_time_short": "8:20 AM",
     "end_time": "09:46:00",
+    "end_time_short": "9:46 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -49929,6 +51382,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -50194,7 +51657,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "09:45:00",
+    "start_time_short": "9:45 AM",
     "end_time": "10:43:00",
+    "end_time_short": "10:43 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -50254,6 +51719,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -50450,7 +51925,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "10:10:00",
+    "start_time_short": "10:10 AM",
     "end_time": "11:13:00",
+    "end_time_short": "11:13 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -50510,6 +51987,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -50752,7 +52239,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "12:15:00",
+    "start_time_short": "12:15 PM",
     "end_time": "14:07:00",
+    "end_time_short": "2:07 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -50812,6 +52301,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -51146,7 +52645,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:15:00",
+    "start_time_short": "2:15 PM",
     "end_time": "15:17:00",
+    "end_time_short": "3:17 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -51206,6 +52707,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -51448,7 +52959,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:00:00",
+    "start_time_short": "3:00 PM",
     "end_time": "16:08:00",
+    "end_time_short": "4:08 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -51508,6 +53021,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -51750,7 +53273,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:45:00",
+    "start_time_short": "4:45 PM",
     "end_time": "17:58:00",
+    "end_time_short": "5:58 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -51810,6 +53335,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -51983,7 +53518,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:00:00",
+    "start_time_short": "6:00 PM",
     "end_time": "19:31:00",
+    "end_time_short": "7:31 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -52043,6 +53580,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -52308,7 +53855,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:27:00",
+    "start_time_short": "6:27 PM",
     "end_time": "20:31:00",
+    "end_time_short": "8:31 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -52368,6 +53917,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -52702,7 +54261,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "20:05:00",
+    "start_time_short": "8:05 PM",
     "end_time": "21:05:00",
+    "end_time_short": "9:05 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -52762,6 +54323,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -53004,7 +54575,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "18:40:00",
+    "start_time_short": "6:40 PM",
     "end_time": "19:33:00",
+    "end_time_short": "7:33 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -53064,6 +54637,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -53237,7 +54820,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "16:52:00",
+    "start_time_short": "4:52 PM",
     "end_time": "17:51:00",
+    "end_time_short": "5:51 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -53297,6 +54882,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -53493,7 +55088,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "15:35:00",
+    "start_time_short": "3:35 PM",
     "end_time": "17:01:00",
+    "end_time_short": "5:01 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -53553,6 +55150,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -53749,7 +55356,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:40:00",
+    "start_time_short": "2:40 PM",
     "end_time": "16:22:00",
+    "end_time_short": "4:22 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -53809,6 +55418,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -54028,7 +55647,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "14:45:00",
+    "start_time_short": "2:45 PM",
     "end_time": "15:43:00",
+    "end_time_short": "3:43 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -54088,6 +55709,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -54307,7 +55938,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "12:35:00",
+    "start_time_short": "12:35 PM",
     "end_time": "13:35:00",
+    "end_time_short": "1:35 PM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -54367,6 +56000,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -54609,7 +56252,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "10:25:00",
+    "start_time_short": "10:25 AM",
     "end_time": "11:25:00",
+    "end_time_short": "11:25 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -54669,6 +56314,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -54911,7 +56566,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:45:00",
+    "start_time_short": "8:45 AM",
     "end_time": "10:28:00",
+    "end_time_short": "10:28 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -54971,6 +56628,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -55282,7 +56949,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "08:15:00",
+    "start_time_short": "8:15 AM",
     "end_time": "09:17:00",
+    "end_time_short": "9:17 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -55342,6 +57011,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -55584,7 +57263,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:30:00",
+    "start_time_short": "6:30 AM",
     "end_time": "08:19:00",
+    "end_time_short": "8:19 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -55644,6 +57325,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -55932,7 +57623,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:45:00",
+    "start_time_short": "6:45 AM",
     "end_time": "07:48:00",
+    "end_time_short": "7:48 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -55992,6 +57685,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -56234,7 +57937,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:15:00",
+    "start_time_short": "5:15 AM",
     "end_time": "07:03:00",
+    "end_time_short": "7:03 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -56294,6 +57999,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -56559,7 +58274,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "05:40:00",
+    "start_time_short": "5:40 AM",
     "end_time": "06:41:00",
+    "end_time_short": "6:41 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -56619,6 +58336,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -56861,7 +58588,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "06:12:00",
+    "start_time_short": "6:12 AM",
     "end_time": "08:18:00",
+    "end_time_short": "8:18 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -56921,6 +58650,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -57255,7 +58994,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": "04:55:00",
+    "start_time_short": "4:55 AM",
     "end_time": "05:58:00",
+    "end_time_short": "5:58 AM",
     "service_exceptions": [
       {
         "service_id": "101PennR",
@@ -57315,6 +59056,16 @@
       {
         "service_id": "101PennR",
         "date": "20250107",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250212",
+        "exception_type": "1"
+      },
+      {
+        "service_id": "101PennR",
+        "date": "20250217",
         "exception_type": "1"
       }
     ],
@@ -57557,7 +59308,9 @@
     "route_color": "FF8000",
     "route_text_color": "FFFFFF",
     "start_time": null,
+    "start_time_short": null,
     "end_time": null,
+    "end_time_short": null,
     "service_exceptions": [
       {
         "service_id": "101PennRP",
