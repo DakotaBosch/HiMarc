@@ -52,7 +52,7 @@ const TrainDetails = () => {
   const navigation = useNavigation();
   const { trainData } = useLocalSearchParams();
   const [parsedTrainData, setParsedTrainData] = useState(null);
-  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [subscriptionStatus, setSubscriptionStatus] = useState<Map<string, boolean>>(new Map());
 
   useEffect(() => {
     if (trainData) {
@@ -69,15 +69,16 @@ const TrainDetails = () => {
   const handleSubscribe = async () => {
     const pushToken = await registerForPushNotificationsAsync();
     if (!pushToken) return;
-    console.log(JSON.stringify(parsedTrainData, null, 2));
+
     try {
       const response = await fetch('http://173.66.239.26:3000/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ train_id: parsedTrainData.trip_id, push_token: pushToken }),
       });
+
       if (response.ok) {
-        setIsSubscribed(true);
+        setSubscriptionStatus((prev) => new Map(prev).set(parsedTrainData.trip_id, true));
         Alert.alert('Subscribed to notifications for this train!');
       } else {
         Alert.alert('Failed to subscribe. Please try again.');
@@ -91,14 +92,16 @@ const TrainDetails = () => {
   const handleUnsubscribe = async () => {
     const pushToken = await registerForPushNotificationsAsync();
     if (!pushToken) return;
+
     try {
       const response = await fetch('http://173.66.239.26:3000/unsubscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ train_id: parsedTrainData.train_id, push_token: pushToken }),
+        body: JSON.stringify({ train_id: parsedTrainData.trip_id, push_token: pushToken }),
       });
+
       if (response.ok) {
-        setIsSubscribed(false);
+        setSubscriptionStatus((prev) => new Map(prev).set(parsedTrainData.trip_id, false));
         Alert.alert('Unsubscribed from notifications for this train.');
       } else {
         Alert.alert('Failed to unsubscribe. Please try again.');
@@ -117,9 +120,11 @@ const TrainDetails = () => {
     );
   }
 
+  const isSubscribed = subscriptionStatus.get(parsedTrainData.trip_id) || false;
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.header}>Schedule</Text>
+      <Text style={styles.header}>Time Table</Text>
       <View style={styles.timeline}>
         {parsedTrainData.stops.map((stop, index) => (
           <View key={index} style={styles.timelineItem}>
@@ -188,12 +193,12 @@ const styles = StyleSheet.create({
     marginLeft: 24,
   },
   stopId: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#333',
   },
   arrivalTime: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#666',
   },
   backButton: {

@@ -7,6 +7,8 @@ const axios = require('axios');
 const admzip = require('adm-zip');
 const csvtojson = require('csvtojson');  // CSV to JSON converter
 const { Expo } = require('expo-server-sdk'); // Add Expo SDK for push notifications
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('subscriptions.db');
 
 const app = express();
 app.use(express.json());
@@ -329,12 +331,10 @@ app.get('/trains', async (req, res) => {
       // Check if delay is non-NaN or start_time is within 2 hours from now
       return (
         (trip.delay !== undefined || // Non-NaN delay
-        //(startTime - currentTime) <= 2 * 60 * 60 * 1000) && // Start time within 2 hours
+        //(startTime - currentTime) <= 6 * 60 * 60 * 1000) && // Start time within 2 hours
         operatesToday) // Trip operates on the current day
       );
     });
-
-    console.log(JSON.stringify(filteredData[0], null, 2));
 
     res.json(filteredData); // Send the filtered data as JSON response
   } catch (error) {
@@ -343,11 +343,19 @@ app.get('/trains', async (req, res) => {
   }
 });
 
+db.serialize(() => {
+  db.run(`
+    CREATE TABLE IF NOT EXISTS subscriptions (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      train_id TEXT NOT NULL,
+      push_token TEXT NOT NULL,
+      UNIQUE(train_id, push_token)
+    )
+  `);
+});
 
-// Route to subscribe to push notifications for a specific train
+
 app.post('/subscribe', (req, res) => {
-  console.log('Received a subscription request:', req.body);
-
   const { train_id, push_token } = req.body;
 
   if (!train_id || !push_token) {
@@ -358,16 +366,18 @@ app.post('/subscribe', (req, res) => {
     return res.status(400).json({ error: 'Invalid push token' });
   }
 
-  // Add the push token to the train's subscription list
-  if (!subscriptions.has(train_id)) {
-    subscriptions.set(train_id, new Set());
-  }
-  subscriptions.get(train_id).add(push_token);
-
-  res.json({ success: true });
+  db.run(
+    'INSERT OR IGNORE INTO subscriptions (train_id, push_token) VALUES (?, ?)',
+    [train_id, push_token],
+    (err) => {
+      if (err) {
+        return res.status(500).json({ error: 'Database error' });
+      }
+      res.json({ success: true });
+    }
+  );
 });
 
-// Route to unsubscribe from push notifications for a specific train
 app.post('/unsubscribe', (req, res) => {
   const { train_id, push_token } = req.body;
 
@@ -375,11 +385,16 @@ app.post('/unsubscribe', (req, res) => {
     return res.status(400).json({ error: 'Missing train_id or push_token' });
   }
 
-  if (subscriptions.has(train_id)) {
-    subscriptions.get(train_id).delete(push_token);
-  }
-
-  res.json({ success: true });
+  db.run(
+    'DELETE FROM subscriptions WHERE train_id = ? AND push_token = ?',
+    [train_id, push_token],
+    (err) => {
+      if (err) {
+        return res.status(500).json({ error: 'Database error' });
+      }
+      res.json({ success: true });
+    }
+  );
 });
 
 // Function to send push notifications
