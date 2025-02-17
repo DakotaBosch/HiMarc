@@ -14,7 +14,7 @@ export default function Index() {
   async function fetchData() {
     try {
       setIsRefreshing(true); // Start refresh
-      const serverResponse = await axios.get('http://192.168.1.19:3000/trains');
+      const serverResponse = await axios.get('http://173.66.239.26:3000/trains');
       const serverTrainData = serverResponse.data;
       setTrainData(serverTrainData);
       console.log(JSON.stringify(serverTrainData, null, 2));

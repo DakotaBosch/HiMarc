@@ -329,8 +329,8 @@ app.get('/trains', async (req, res) => {
       // Check if delay is non-NaN or start_time is within 2 hours from now
       return (
         (trip.delay !== undefined || // Non-NaN delay
-        (startTime - currentTime) <= 2 * 60 * 60 * 1000) && // Start time within 2 hours
-        operatesToday // Trip operates on the current day
+        //(startTime - currentTime) <= 2 * 60 * 60 * 1000) && // Start time within 2 hours
+        operatesToday) // Trip operates on the current day
       );
     });
 
@@ -346,6 +346,8 @@ app.get('/trains', async (req, res) => {
 
 // Route to subscribe to push notifications for a specific train
 app.post('/subscribe', (req, res) => {
+  console.log('Received a subscription request:', req.body);
+
   const { train_id, push_token } = req.body;
 
   if (!train_id || !push_token) {
@@ -416,6 +418,10 @@ async function checkForDelays() {
   try {
     const trains = await fetchAndDecodeGTFSRT();
 
+    if (!trains.length) {
+      console.log('GTFSRT data is empty');
+      return; // Exit early if no trains
+    }
     for (const train of trains) {
       if (train.delay >= 5) {
         await sendPushNotification(train);
@@ -431,4 +437,4 @@ setInterval(checkForDelays, 60 * 1000); // Check every minute
 
 // Start the server
 const PORT = 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
