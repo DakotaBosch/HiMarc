@@ -71,7 +71,7 @@ const TrainDetails = () => {
     if (!pushToken) return;
 
     try {
-      const response = await fetch('http://173.66.239.26:3000/subscribe', {
+      const response = await fetch('https://www.himarc.us/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ train_id: parsedTrainData.trip_id, push_token: pushToken }),
@@ -94,7 +94,7 @@ const TrainDetails = () => {
     if (!pushToken) return;
 
     try {
-      const response = await fetch('http://173.66.239.26:3000/unsubscribe', {
+      const response = await fetch('https://www.himarc.us/unsubscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ train_id: parsedTrainData.trip_id, push_token: pushToken }),

@@ -258,6 +258,7 @@ setInterval(fetchAndProcessDailyData, dailyTaskInterval); // Set the daily inter
 
 // Route to serve stored train data
 app.get('/trains', async (req, res) => {
+  console.log('trains data requested');
   try {
     // Load the data from the JSON files
     const dailyData = await loadData('daily_data.json'); // Array of objects
@@ -277,7 +278,6 @@ app.get('/trains', async (req, res) => {
 
       // If trainInfo exists, merge it into the trip object; otherwise, just return the trip object
       const combinedTrip = trainInfo ? { ...trip, ...trainInfo } : trip;
-
       // Add completion_percent calculation
       if (combinedTrip.start_time && combinedTrip.end_time && combinedTrip.delay !== undefined) {
         // Helper function to convert "HH:MM:SS" to timestamp (milliseconds since Unix epoch)
