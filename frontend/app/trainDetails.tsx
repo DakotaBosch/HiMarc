@@ -6,6 +6,7 @@ import { Dimensions } from 'react-native';
 import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import * as Location from 'expo-location';
+import axios from 'axios';
 
 // Function to format time from HH:MM:SS to H:MM
 function formatTime(timeString) {
@@ -71,13 +72,12 @@ const TrainDetails = () => {
     if (!pushToken) return;
 
     try {
-      const response = await fetch('https://www.himarc.us/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ train_id: parsedTrainData.trip_id, push_token: pushToken }),
+      const response = await axios.post('https://www.himarc.us/subscribe', {
+        train_id: parsedTrainData.trip_id,
+        push_token: pushToken,
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         setSubscriptionStatus((prev) => new Map(prev).set(parsedTrainData.trip_id, true));
         Alert.alert('Subscribed to notifications for this train!');
       } else {
@@ -94,13 +94,12 @@ const TrainDetails = () => {
     if (!pushToken) return;
 
     try {
-      const response = await fetch('https://www.himarc.us/unsubscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ train_id: parsedTrainData.trip_id, push_token: pushToken }),
+      const response = await axios.post('https://www.himarc.us/unsubscribe', {
+        train_id: parsedTrainData.trip_id,
+        push_token: pushToken,
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         setSubscriptionStatus((prev) => new Map(prev).set(parsedTrainData.trip_id, false));
         Alert.alert('Unsubscribed from notifications for this train.');
       } else {
