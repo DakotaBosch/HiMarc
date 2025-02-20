@@ -24,11 +24,14 @@ const subscriptions = new Map(); // Map<train_id, Set<push_token>>
 function getLargestTimeStop(entity) {
   let largestTimeStop = null;
   let largestTime = -Infinity;
-
+  //console.log(entity);
   // Loop through each stop_time_update
   entity.trip_update.stop_time_update.forEach(stop => {
+    let stopTime = 0;
     // Handle both arrival and departure times
-    const stopTime = stop.departure ? stop.departure.time : stop.arrival.time;
+    if ((stop.departure && stop.departure.time) || (stop.arrival && stop.arrival.time)) {
+      const stopTime = stop.departure ? stop.departure.time : stop.arrival.time;
+    }
 
     if (parseInt(stopTime) > largestTime) {
       largestTime = parseInt(stopTime);
@@ -53,10 +56,11 @@ async function FormatData(entityData) {
     const largestStops = entityData.map(entity => getLargestTimeStop(entity));
 
     // Format the data for the TrainCard component
-    const formattedTrainData = largestStops.map(stop => ({
+    const formattedTrainData = largestStops.map((stop, index) => ({
       trip_id: `${stop.trip_id}`,
       delay: stop.delay,
       delay_formatted: isNaN(stop.delay) || stop.delay < 30 ? 'On Time' : `${Math.round(stop.delay / 60)} min delay`,
+      schedule_relationship: entityData[index].trip_update.trip.schedule_relationship || 'Scheduled', // Fallback in case it's undefined
     }));
 
     return formattedTrainData;
@@ -331,8 +335,8 @@ app.get('/trains', async (req, res) => {
       // Check if delay is non-NaN or start_time is within 2 hours from now
       return (
         (trip.delay !== undefined || // Non-NaN delay
-        //(startTime - currentTime) <= 6 * 60 * 60 * 1000) && // Start time within 2 hours
-        operatesToday) // Trip operates on the current day
+        (startTime - currentTime) <= 6 * 60 * 60 * 1000) && // Start time within 6 hours
+        operatesToday // Trip operates on the current day
       );
     });
 
@@ -356,6 +360,7 @@ db.serialize(() => {
 
 
 app.post('/subscribe', (req, res) => {
+  console.log('Subscription request received');
   const { train_id, push_token } = req.body;
 
   if (!train_id || !push_token) {

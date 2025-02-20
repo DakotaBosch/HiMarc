@@ -1,1 +1,14 @@
-0
+[
+  {
+    "trip_id": "Train548",
+    "delay": 81,
+    "delay_formatted": "1 min delay",
+    "schedule_relationship": "Scheduled"
+  },
+  {
+    "trip_id": "Train454",
+    "delay": 919,
+    "delay_formatted": "15 min delay",
+    "schedule_relationship": "Scheduled"
+  }
+]
