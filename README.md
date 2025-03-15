@@ -30,10 +30,10 @@ HiMARC Train Tracker is an Android app that provides real-time status updates, s
 ## 🚀 Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/marc-train-tracker.git
-   cd marc-train-tracker
-   ```
+  ```bash
+  git clone https://github.com/yourusername/marc-train-tracker.git
+  cd marc-train-tracker
+  ```
 2. Install dependencies:
   ```bash
   npm install
@@ -44,7 +44,7 @@ HiMARC Train Tracker is an Android app that provides real-time status updates, s
   ```
 
 
-📡 ## API Endpoints
+# 📡 API Endpoints
 ## Fetch Live Train Data
   ```
   GET /api/live-trains
