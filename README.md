@@ -1,4 +1,4 @@
-HiMARC Train Tracker
+🚆HiMARC Train Tracker
 
 HiMARC Train Tracker is an Android app that provides real-time status updates, schedules, delays, and service alerts for MARC trains. Whether you're commuting daily or taking an occasional trip, this app helps you stay informed about your train's status with a clean, user-friendly experience.
 
@@ -6,8 +6,8 @@ HiMARC Train Tracker is an Android app that provides real-time status updates, s
 📸 Screenshots
 
 <p align="center">
-  <img src="assets/homepage.jpg" width="200">
-  <img src="assets/schedule.jpg" width="100">
+  <img src="assets/homepage.jpg" width="220"style="margin-right: 50px;">
+  <img src="assets/schedule.jpg" width="220">
 </p>
 
 📌 Features
