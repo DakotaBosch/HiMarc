@@ -5,10 +5,11 @@ HiMARC Train Tracker is an Android app that provides real-time status updates, s
 
 📸 Screenshots
 
-<p align="center">
-  <img src="assets/homepage.jpg" width="220"style="margin-right: 50px;">
+<div style="text-align: center;">
+  <img src="assets/homepage.jpg" width="220" style="margin-right: 50px;">
   <img src="assets/schedule.jpg" width="220">
-</p>
+</div>
+
 
 📌 Features
 
