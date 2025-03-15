@@ -35,8 +35,9 @@ HiMARC Train Tracker is an Android app that provides real-time status updates, s
    cd marc-train-tracker
 
 Install dependencies:
-bashCopynpm install
-
+  ```bash
+  npm install
+  ```
 Run the server:
 bashCopynode server.js
 
