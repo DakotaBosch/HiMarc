@@ -33,6 +33,7 @@ HiMARC Train Tracker is an Android app that provides real-time status updates, s
    ```bash
    git clone https://github.com/yourusername/marc-train-tracker.git
    cd marc-train-tracker
+   ```
 
 2. Install dependencies:
   ```bash
@@ -44,44 +45,49 @@ HiMARC Train Tracker is an Android app that provides real-time status updates, s
   ```
 
 
-📡 API Endpoints
-Fetch Live Train Data
+📡 #API Endpoints
+#Fetch Live Train Data
   ```
   GET /api/live-trains
   ```
 Returns real-time train delay updates.
-Fetch Daily Train Schedule
-Copy```GET /api/schedule
-Returns the full daily train schedule.
-Subscribe to Train Alerts
-CopyPOST /api/subscribe
-Request body:
-jsonCopy{
-  "train_id": "12345",
-  "push_token": "ExponentPushToken[abcdefg]"
-}
-Subscribes a user to push notifications for a specific train.
-🔍 How It Works
-GTFS-RT Data Fetching:
 
-Uses protobuf.js to decode the real-time GTFS feed.
-Extracts trip updates, delays, and service alerts.
+Fetch Daily Train Schedule
+  ```
+  GET /api/schedule
+  ```
+Returns the full daily train schedule.
+
+#Subscribe to Train Alerts
+  ```
+  POST /api/subscribe
+  ```
+Request body:
+  ```
+  jsonCopy{
+    "train_id": "12345",
+    "push_token": "ExponentPushToken[abcdefg]"
+  }
+  ```
+Subscribes a user to push notifications for a specific train.
+
+##🔍 How It Works
+#GTFS-RT Data Fetching:
+-Uses protobuf.js to decode the real-time GTFS feed.
+-Extracts trip updates, delays, and service alerts.
 
 GTFS Static Data Processing:
-
-Downloads and extracts the latest GTFS schedule ZIP.
-Converts CSV files (stops, trips, routes, stop_times) to JSON.
-Joins schedule data for structured output.
+-Downloads and extracts the latest GTFS schedule ZIP.
+-Converts CSV files (stops, trips, routes, stop_times) to JSON.
+-Joins schedule data for structured output.
 
 Mobile App Experience:
-
-Displays real-time train status in an intuitive UI.
-Allows users to subscribe to alerts for specific trains.
-Provides a searchable schedule with delay indicators.
-Features an interactive map for route visualization.
-Saves favorite routes for quick access.
+-Displays real-time train status in an intuitive UI.
+-Allows users to subscribe to alerts for specific trains.
+-Provides a searchable schedule with delay indicators.
+-Features an interactive map for route visualization.
+-Saves favorite routes for quick access.
 
 Push Notifications:
-
-Uses Expo SDK to send delay alerts to subscribers.
-Stores subscription data in an SQLite database.
+-Uses Expo SDK to send delay alerts to subscribers.
+-Stores subscription data in an SQLite database.
